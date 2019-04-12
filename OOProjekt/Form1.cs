@@ -44,7 +44,7 @@ namespace OOProjekt
 
         private void BtnMinimize_MouseEnter(object sender, EventArgs e)
         {
-            btnMinimize.BackColor = Color.Gray;
+            btnMinimize.BackColor = Color.DimGray;
         }
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
