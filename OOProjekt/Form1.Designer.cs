@@ -132,6 +132,7 @@
             this.lvBoks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvBoks.Name = "lvBoks";
             this.lvBoks.Size = new System.Drawing.Size(732, 377);
+            this.lvBoks.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvBoks.TabIndex = 12;
             this.lvBoks.UseCompatibleStateImageBehavior = false;
             this.lvBoks.View = System.Windows.Forms.View.Details;

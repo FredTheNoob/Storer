@@ -86,11 +86,19 @@ namespace OOProjekt
 
         private void BtnRemove_Click(object sender, EventArgs e)
         {
-            // If the user has not selected anything in the listview (==0) then
-            if (lvBoks.SelectedItems.Count == 0) return;
+            // Make an int called selectCount and store the selected 
+            int selectCount = lvBoks.SelectedItems.Count;
+
+            if(selectCount == 1)
             {
-                // Remove the selected item from the listview (using array number 0)
                 lvBoks.SelectedItems[0].Remove();
+            }
+            else if(selectCount > 1)
+            {
+                foreach (ListViewItem eachItem in lvBoks.SelectedItems)
+                {
+                    lvBoks.Items.Remove(eachItem);
+                }
             }
         }
     }
