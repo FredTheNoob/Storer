@@ -28,57 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstvBox1 = new System.Windows.Forms.ListView();
-            this.clnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clnPlu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clnPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Label();
+            this.lvBoks = new System.Windows.Forms.ListView();
+            this.clnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnPlu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstvBox1
-            // 
-            this.lstvBox1.BackColor = System.Drawing.Color.Silver;
-            this.lstvBox1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clnName,
-            this.clnCategory,
-            this.clnPlu,
-            this.clnPrice});
-            this.lstvBox1.Location = new System.Drawing.Point(27, 143);
-            this.lstvBox1.Name = "lstvBox1";
-            this.lstvBox1.Size = new System.Drawing.Size(972, 476);
-            this.lstvBox1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.lstvBox1.TabIndex = 5;
-            this.lstvBox1.UseCompatibleStateImageBehavior = false;
-            this.lstvBox1.View = System.Windows.Forms.View.Tile;
-            // 
-            // clnName
-            // 
-            this.clnName.Text = "Product Name";
-            // 
-            // clnCategory
-            // 
-            this.clnCategory.Text = "Category";
-            // 
-            // clnPlu
-            // 
-            this.clnPlu.Text = "PLU";
-            // 
-            // clnPrice
-            // 
-            this.clnPrice.Text = "Price";
             // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.Silver;
             this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtSearch.Location = new System.Drawing.Point(857, 115);
+            this.txtSearch.Location = new System.Drawing.Point(857, 65);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(142, 22);
             this.txtSearch.TabIndex = 6;
@@ -86,7 +56,7 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(798, 115);
+            this.lblSearch.Location = new System.Drawing.Point(798, 65);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(53, 17);
             this.lblSearch.TabIndex = 7;
@@ -141,19 +111,74 @@
             this.btnMinimize.MouseEnter += new System.EventHandler(this.BtnMinimize_MouseEnter);
             this.btnMinimize.MouseLeave += new System.EventHandler(this.BtnMinimize_MouseLeave);
             // 
+            // lvBoks
+            // 
+            this.lvBoks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clnName,
+            this.clnCategory,
+            this.clnPrice,
+            this.clnPlu});
+            this.lvBoks.FullRowSelect = true;
+            this.lvBoks.GridLines = true;
+            this.lvBoks.Location = new System.Drawing.Point(25, 98);
+            this.lvBoks.Name = "lvBoks";
+            this.lvBoks.Size = new System.Drawing.Size(974, 463);
+            this.lvBoks.TabIndex = 12;
+            this.lvBoks.UseCompatibleStateImageBehavior = false;
+            this.lvBoks.View = System.Windows.Forms.View.Details;
+            // 
+            // clnName
+            // 
+            this.clnName.Text = "Name";
+            this.clnName.Width = 289;
+            // 
+            // clnPrice
+            // 
+            this.clnPrice.Text = "Price";
+            this.clnPrice.Width = 366;
+            // 
+            // clnPlu
+            // 
+            this.clnPlu.Text = "PLU";
+            // 
+            // clnCategory
+            // 
+            this.clnCategory.Text = "Category";
+            this.clnCategory.Width = 255;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(864, 580);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(135, 41);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(25, 580);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(135, 41);
+            this.btnRemove.TabIndex = 14;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1027, 650);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.lvBoks);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.lstvBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Storer";
@@ -164,17 +189,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.ListView lstvBox1;
-        private System.Windows.Forms.ColumnHeader clnName;
-        private System.Windows.Forms.ColumnHeader clnCategory;
-        private System.Windows.Forms.ColumnHeader clnPlu;
-        private System.Windows.Forms.ColumnHeader clnPrice;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label btnExit;
         private System.Windows.Forms.Label btnMinimize;
+        private System.Windows.Forms.ListView lvBoks;
+        private System.Windows.Forms.ColumnHeader clnName;
+        private System.Windows.Forms.ColumnHeader clnCategory;
+        private System.Windows.Forms.ColumnHeader clnPrice;
+        private System.Windows.Forms.ColumnHeader clnPlu;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
 
