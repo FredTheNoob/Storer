@@ -13,7 +13,7 @@ namespace OOProjekt
 {
     public partial class addItemForm : Form
     {
-        public addItemForm()
+        public addItemForm(Form1 refForm1)
         {
             InitializeComponent();
         }
