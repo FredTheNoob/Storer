@@ -67,18 +67,18 @@ namespace OOProjekt
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
-            ListViewItem lvItem = new ListViewItem("Apple");
-            // Move onto the subitem of apple and find column 1 (tabindex 1) and then insert the value 4 into this column (the amount column)
-            lvItem.SubItems.Add("4");
-            // Move onto the subitem of apple and find column 2 (tabindex 2) and then insert the string: fruits into this column (the category column)
-            lvItem.SubItems.Add("Fruits");
-            // Move onto the subitem of apple and find column 3 (tabindex 3) and then insert the string: $0.50 into this column (the price column)
-            lvItem.SubItems.Add("$0.50");
-            // Move onto the subitem of apple and find column 4 (tabindex 4) and then insert the string: 137 into this column (the PLU column)
-            lvItem.SubItems.Add("137");
-            // Add the items into the listview of the variable lvItem
-            lvBoks.Items.Add(lvItem);
+            //// Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
+            //ListViewItem lvItem = new ListViewItem("Apple");
+            //// Move onto the subitem of apple and find column 1 (tabindex 1) and then insert the value 4 into this column (the amount column)
+            //lvItem.SubItems.Add("4");
+            //// Move onto the subitem of apple and find column 2 (tabindex 2) and then insert the string: fruits into this column (the category column)
+            //lvItem.SubItems.Add("Fruits");
+            //// Move onto the subitem of apple and find column 3 (tabindex 3) and then insert the string: $0.50 into this column (the price column)
+            //lvItem.SubItems.Add("$0.50");
+            //// Move onto the subitem of apple and find column 4 (tabindex 4) and then insert the string: 137 into this column (the PLU column)
+            //lvItem.SubItems.Add("137");
+            //// Add the items into the listview of the variable lvItem
+            //lvBoks.Items.Add(lvItem);
             refItemForm.Show();
         }
 
@@ -91,8 +91,8 @@ namespace OOProjekt
         {
             // Make an int called selectCount and store the selected 
             int selectCount = lvBoks.SelectedItems.Count;
-            // Prompt the user with a message asking whether or not he wants to remove the selected items in the listView
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            // Prompt the user with a message asking whether or not he wants to remove the selected items in the listView and set the icon of the messagebox to a infoicon
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             // If the user presses yes
             if (dialogResult == DialogResult.Yes)
             {
