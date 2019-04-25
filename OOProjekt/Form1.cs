@@ -17,6 +17,7 @@ namespace OOProjekt
     public partial class Form1 : Form
     {
         addItemForm refItemForm;
+        public ListView MainListView;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -27,6 +28,11 @@ namespace OOProjekt
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public void reloadMainList()
+        {
+            lvBoks = MainListView;
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -67,18 +73,6 @@ namespace OOProjekt
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            //// Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
-            //ListViewItem lvItem = new ListViewItem("Apple");
-            //// Move onto the subitem of apple and find column 1 (tabindex 1) and then insert the value 4 into this column (the amount column)
-            //lvItem.SubItems.Add("4");
-            //// Move onto the subitem of apple and find column 2 (tabindex 2) and then insert the string: fruits into this column (the category column)
-            //lvItem.SubItems.Add("Fruits");
-            //// Move onto the subitem of apple and find column 3 (tabindex 3) and then insert the string: $0.50 into this column (the price column)
-            //lvItem.SubItems.Add("$0.50");
-            //// Move onto the subitem of apple and find column 4 (tabindex 4) and then insert the string: 137 into this column (the PLU column)
-            //lvItem.SubItems.Add("137");
-            //// Add the items into the listview of the variable lvItem
-            //lvBoks.Items.Add(lvItem);
             refItemForm.Show();
         }
 
