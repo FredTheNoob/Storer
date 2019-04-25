@@ -62,6 +62,8 @@
             this.btnMinimize.TabIndex = 14;
             this.btnMinimize.Text = "−";
             this.btnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
+            this.btnMinimize.Enter += new System.EventHandler(this.BtnMinimize_MouseEnter);
+            this.btnMinimize.Leave += new System.EventHandler(this.BtnMinimize_MouseLeave);
             this.btnMinimize.MouseEnter += new System.EventHandler(this.BtnMinimize_MouseEnter);
             this.btnMinimize.MouseLeave += new System.EventHandler(this.BtnMinimize_MouseLeave);
             // 
@@ -78,6 +80,8 @@
             this.btnExit.TabIndex = 13;
             this.btnExit.Text = "✖";
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            this.btnExit.MouseEnter += new System.EventHandler(this.BtnExit_MouseEnter);
+            this.btnExit.MouseLeave += new System.EventHandler(this.BtnExit_MouseLeave);
             // 
             // cmbAddItemCategory
             // 
