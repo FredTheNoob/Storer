@@ -107,7 +107,7 @@ namespace OOProjekt
 
         private void BtnSell_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
