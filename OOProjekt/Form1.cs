@@ -92,14 +92,14 @@ namespace OOProjekt
             // Make an int called selectCount and store the selected 
             int selectCount = lvBoks.SelectedItems.Count;
             // Prompt the user with a message asking whether or not he wants to remove the selected items in the listView
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Delete?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             // If the user presses yes
             if (dialogResult == DialogResult.Yes)
             {
                 // If the user only has selected 1 item from the listView
                 if (selectCount == 1)
                 {
-                    // Remove 1 item from the array selected in the 
+                    // Remove 1 item from the array selected in the listView
                     lvBoks.SelectedItems[0].Remove();
                 }
                 // If the user has selected more than 1 item
