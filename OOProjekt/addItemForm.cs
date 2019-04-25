@@ -48,11 +48,13 @@ namespace OOProjekt
 
         private void BtnMinimize_Click(object sender, EventArgs e)
         {
+            // Minimize the window
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
+            // Change the background color of the label to red
             btnExit.BackColor = Color.Red;
         }
 
@@ -63,6 +65,7 @@ namespace OOProjekt
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+            // Make the form able to be moved around
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
@@ -70,6 +73,11 @@ namespace OOProjekt
         private void BtnMinimize_MouseLeave(object sender, EventArgs e)
         {
             btnMinimize.BackColor = pictureBox1.BackColor;
+        }
+
+        private void BtnExit_MouseLeave(object sender, EventArgs e)
+        {
+            btnExit.BackColor = pictureBox1.BackColor;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)

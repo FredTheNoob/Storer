@@ -36,12 +36,12 @@
             this.btnMinimize = new System.Windows.Forms.Label();
             this.lvBoks = new System.Windows.Forms.ListView();
             this.clnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnPlu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.clnAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.txtSearch.BackColor = System.Drawing.Color.Silver;
             this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtSearch.Location = new System.Drawing.Point(643, 53);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(108, 20);
             this.txtSearch.TabIndex = 6;
@@ -58,7 +58,7 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(598, 53);
+            this.lblSearch.Location = new System.Drawing.Point(598, 56);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(41, 13);
@@ -79,7 +79,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(771, 21);
             this.pictureBox1.TabIndex = 9;
@@ -129,7 +129,7 @@
             this.lvBoks.FullRowSelect = true;
             this.lvBoks.GridLines = true;
             this.lvBoks.Location = new System.Drawing.Point(19, 80);
-            this.lvBoks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvBoks.Margin = new System.Windows.Forms.Padding(2);
             this.lvBoks.Name = "lvBoks";
             this.lvBoks.Size = new System.Drawing.Size(732, 377);
             this.lvBoks.Sorting = System.Windows.Forms.SortOrder.Ascending;
@@ -141,6 +141,11 @@
             // 
             this.clnName.Text = "Name";
             this.clnName.Width = 167;
+            // 
+            // clnAmount
+            // 
+            this.clnAmount.Text = "Amount";
+            this.clnAmount.Width = 189;
             // 
             // clnCategory
             // 
@@ -160,7 +165,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(648, 471);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 33);
             this.btnAdd.TabIndex = 13;
@@ -171,18 +176,13 @@
             // btnRemove
             // 
             this.btnRemove.Location = new System.Drawing.Point(19, 471);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(101, 33);
             this.btnRemove.TabIndex = 14;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
-            // 
-            // clnAmount
-            // 
-            this.clnAmount.Text = "Amount";
-            this.clnAmount.Width = 189;
             // 
             // Form1
             // 
@@ -200,7 +200,7 @@
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Storer";
             this.Load += new System.EventHandler(this.Form1_Load);
