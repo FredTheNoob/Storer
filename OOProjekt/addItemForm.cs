@@ -56,5 +56,10 @@ namespace OOProjekt
         {
             btnMinimize.BackColor = pictureBox1.BackColor;
         }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
