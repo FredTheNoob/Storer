@@ -79,14 +79,15 @@ namespace OOProjekt
         private void Form1_Load(object sender, EventArgs e)
         {
             refItemForm = new addItemForm(this);
+            MainListView = lvBoks;
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
         {
             // Make an int called selectCount and store the selected 
             int selectCount = lvBoks.SelectedItems.Count;
-            // Prompt the user with a message asking whether or not he wants to remove the selected items in the listView
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            // Prompt the user with a message asking whether or not he wants to remove the selected items in the listView and set the icon of the messagebox to a infoicon
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             // If the user presses yes
             if (dialogResult == DialogResult.Yes)
             {

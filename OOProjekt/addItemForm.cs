@@ -94,6 +94,5 @@ namespace OOProjekt
             // Add the items into the listview of the variable lvItem
             refForm1.MainListView.Items.Add(lvItem);
         }
-
     }
 }
