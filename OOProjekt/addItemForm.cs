@@ -30,11 +30,11 @@ namespace OOProjekt
         // Make a method to clear the content within the form
         private void clear()
         {
-            txtAddBoks.Clear();
+            txtName.Clear();
             nudAddItemAmount.ResetText();
-            cmbAddItemCategory.ResetText();
-            nudAddItemPrice.ResetText();
-            nudAddItemPlu.ResetText();
+            cmbItemCategory.ResetText();
+            nudItemPrice.ResetText();
+            nudItemPlu.ResetText();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -82,15 +82,20 @@ namespace OOProjekt
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             // Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
-            ListViewItem lvItem = new ListViewItem("Apple");
+            ListViewItem lvItem = new ListViewItem(txtName.Text);
             // Move onto the subitem of apple and find column 1 (tabindex 1) and then insert the value 4 into this column (the amount column)
-            lvItem.SubItems.Add("4");
+            lvItem.SubItems.Add(nudAddItemAmount.Value.ToString());
+            // If the category typed does NOT exist the a new category gets adde
+            if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
+            {
+                cmbItemCategory.Items.Add(cmbItemCategory.Text);
+            }
             // Move onto the subitem of apple and find column 2 (tabindex 2) and then insert the string: fruits into this column (the category column)
-            lvItem.SubItems.Add("Fruits");
+            lvItem.SubItems.Add(cmbItemCategory.Text);
             // Move onto the subitem of apple and find column 3 (tabindex 3) and then insert the string: $0.50 into this column (the price column)
-            lvItem.SubItems.Add("$0.50");
+            lvItem.SubItems.Add(nudItemPrice.Value.ToString());
             // Move onto the subitem of apple and find column 4 (tabindex 4) and then insert the string: 137 into this column (the PLU column)
-            lvItem.SubItems.Add("137");
+            lvItem.SubItems.Add(nudItemPlu.Value.ToString());
             // Add the items into the listview of the variable lvItem
             refForm1.MainListView.Items.Add(lvItem);
         }
