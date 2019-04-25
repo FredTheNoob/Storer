@@ -13,8 +13,11 @@ namespace OOProjekt
 {
     public partial class addItemForm : Form
     {
-        public addItemForm(Form1 refForm1)
+        Form1 refForm1;
+        ListView lvBoks;
+        public addItemForm(Form1 Form1)
         {
+            refForm1 = Form1;
             InitializeComponent();
         }
 
@@ -71,7 +74,19 @@ namespace OOProjekt
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-
+            // Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
+            ListViewItem lvItem = new ListViewItem("Apple");
+            // Move onto the subitem of apple and find column 1 (tabindex 1) and then insert the value 4 into this column (the amount column)
+            lvItem.SubItems.Add("4");
+            // Move onto the subitem of apple and find column 2 (tabindex 2) and then insert the string: fruits into this column (the category column)
+            lvItem.SubItems.Add("Fruits");
+            // Move onto the subitem of apple and find column 3 (tabindex 3) and then insert the string: $0.50 into this column (the price column)
+            lvItem.SubItems.Add("$0.50");
+            // Move onto the subitem of apple and find column 4 (tabindex 4) and then insert the string: 137 into this column (the PLU column)
+            lvItem.SubItems.Add("137");
+            // Add the items into the listview of the variable lvItem
+            refForm1.MainListView.Items.Add(lvItem);
         }
+
     }
 }
