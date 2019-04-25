@@ -14,7 +14,6 @@ namespace OOProjekt
     public partial class addItemForm : Form
     {
         Form1 refForm1;
-        ListView lvBoks;
         public addItemForm(Form1 Form1)
         {
             refForm1 = Form1;
@@ -95,6 +94,5 @@ namespace OOProjekt
             // Add the items into the listview of the variable lvItem
             refForm1.MainListView.Items.Add(lvItem);
         }
-
     }
 }

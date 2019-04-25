@@ -79,6 +79,7 @@ namespace OOProjekt
         private void Form1_Load(object sender, EventArgs e)
         {
             refItemForm = new addItemForm(this);
+            MainListView = lvBoks;
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
