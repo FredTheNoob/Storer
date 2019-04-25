@@ -42,6 +42,7 @@
             this.clnPlu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnSell = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(598, 56);
+            this.lblSearch.Location = new System.Drawing.Point(592, 55);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(47, 15);
@@ -70,7 +71,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Roboto Thin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(328, 23);
+            this.lblTitle.Location = new System.Drawing.Point(320, 33);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(140, 23);
@@ -157,12 +158,12 @@
             // clnPrice
             // 
             this.clnPrice.Text = "Price";
-            this.clnPrice.Width = 158;
+            this.clnPrice.Width = 137;
             // 
             // clnPlu
             // 
             this.clnPlu.Text = "PLU";
-            this.clnPlu.Width = 41;
+            this.clnPlu.Width = 62;
             // 
             // btnAdd
             // 
@@ -189,12 +190,26 @@
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
+            // btnSell
+            // 
+            this.btnSell.BackColor = System.Drawing.Color.Silver;
+            this.btnSell.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSell.Location = new System.Drawing.Point(336, 471);
+            this.btnSell.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSell.Name = "btnSell";
+            this.btnSell.Size = new System.Drawing.Size(101, 46);
+            this.btnSell.TabIndex = 15;
+            this.btnSell.Text = "Sell";
+            this.btnSell.UseVisualStyleBackColor = false;
+            this.btnSell.Click += new System.EventHandler(this.BtnSell_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(770, 528);
+            this.Controls.Add(this.btnSell);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lvBoks);
@@ -230,6 +245,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.ColumnHeader clnAmount;
+        private System.Windows.Forms.Button btnSell;
     }
 }
 

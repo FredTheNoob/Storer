@@ -27,7 +27,11 @@ namespace OOProjekt
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        // Make a method to clear the content within the form
+        ////////////////
+        /// METHODS ///
+        //////////////
+        
+        // Define a method to clear the content within the form
         private void clear()
         {
             txtName.Clear();
@@ -37,6 +41,9 @@ namespace OOProjekt
             nudItemPlu.ResetText();
         }
 
+        //////////////////////
+        /// EVENTHANDLERS ///
+        ////////////////////
         private void BtnExit_Click(object sender, EventArgs e)
         {
             // Hide the form temporarily
@@ -64,7 +71,7 @@ namespace OOProjekt
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            // Make the form able to be moved around
+            // Make the form able to be moved around by using natives
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
@@ -76,6 +83,7 @@ namespace OOProjekt
 
         private void BtnExit_MouseLeave(object sender, EventArgs e)
         {
+            // When the user moves the mouse from the exit button again the color will be changed to the same as the picturebox color
             btnExit.BackColor = pictureBox1.BackColor;
         }
 
@@ -83,18 +91,18 @@ namespace OOProjekt
         {
             // Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
             ListViewItem lvItem = new ListViewItem(txtName.Text);
-            // Move onto the subitem of apple and find column 1 (tabindex 1) and then insert the value 4 into this column (the amount column)
+            // Move onto the subitem of the given data from the user given in the nudAddItemAmount and insert the value into the column of the listView (the amount column)
             lvItem.SubItems.Add(nudAddItemAmount.Value.ToString());
             // If the category typed does NOT exist the a new category gets added
             if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
             {
                 cmbItemCategory.Items.Add(cmbItemCategory.Text);
             }
-            // Move onto the subitem of apple and find column 2 (tabindex 2) and then insert the string: fruits into this column (the category column)
+            // Move onto the subitem of the given data from the user given in the cmbItemCategory and insert the value/string into the column of the listView (the Category column)
             lvItem.SubItems.Add(cmbItemCategory.Text);
-            // Move onto the subitem of apple and find column 3 (tabindex 3) and then insert the string: $0.50 into this column (the price column)
+            // Move onto the subitem of the given data from the user given in the nudItemPrice and insert the value into the column of the listView (the Price column)
             lvItem.SubItems.Add(nudItemPrice.Value.ToString());
-            // Move onto the subitem of apple and find column 4 (tabindex 4) and then insert the string: 137 into this column (the PLU column)
+            // Same as above (--||--)
             lvItem.SubItems.Add(nudItemPlu.Value.ToString());
             // Add the items into the listview of the variable lvItem
             refForm1.MainListView.Items.Add(lvItem);
