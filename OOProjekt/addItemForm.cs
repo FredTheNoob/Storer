@@ -52,11 +52,6 @@ namespace OOProjekt
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
-        private void BtnExit_MouseLeave(object sender, EventArgs e)
-        {
-            btnExit.BackColor = pictureBox1.BackColor;
-        }
-
         private void BtnMinimize_MouseLeave(object sender, EventArgs e)
         {
             btnMinimize.BackColor = pictureBox1.BackColor;

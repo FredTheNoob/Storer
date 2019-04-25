@@ -46,6 +46,9 @@
             this.btnMinimize.Size = new System.Drawing.Size(21, 24);
             this.btnMinimize.TabIndex = 14;
             this.btnMinimize.Text = "−";
+            this.btnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
+            this.btnMinimize.MouseEnter += new System.EventHandler(this.BtnMinimize_MouseEnter);
+            this.btnMinimize.MouseLeave += new System.EventHandler(this.BtnMinimize_MouseLeave);
             // 
             // btnExit
             // 
@@ -56,9 +59,10 @@
             this.btnExit.Location = new System.Drawing.Point(773, -6);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 24);
+            this.btnExit.Size = new System.Drawing.Size(22, 24);
             this.btnExit.TabIndex = 13;
             this.btnExit.Text = "✖";
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // pictureBox1
             // 
@@ -69,6 +73,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(799, 21);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseDown);
             // 
             // addItemForm
             // 
