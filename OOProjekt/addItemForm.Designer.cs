@@ -143,18 +143,20 @@
             // lblAddItemPlu
             // 
             this.lblAddItemPlu.AutoSize = true;
+            this.lblAddItemPlu.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemPlu.Location = new System.Drawing.Point(12, 354);
             this.lblAddItemPlu.Name = "lblAddItemPlu";
-            this.lblAddItemPlu.Size = new System.Drawing.Size(28, 13);
+            this.lblAddItemPlu.Size = new System.Drawing.Size(31, 15);
             this.lblAddItemPlu.TabIndex = 40;
             this.lblAddItemPlu.Text = "PLU";
             // 
             // lblAddItemPrice
             // 
             this.lblAddItemPrice.AutoSize = true;
+            this.lblAddItemPrice.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemPrice.Location = new System.Drawing.Point(12, 299);
             this.lblAddItemPrice.Name = "lblAddItemPrice";
-            this.lblAddItemPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblAddItemPrice.Size = new System.Drawing.Size(36, 15);
             this.lblAddItemPrice.TabIndex = 39;
             this.lblAddItemPrice.Text = "Price";
             // 
@@ -171,9 +173,10 @@
             // lblAddItemCategory
             // 
             this.lblAddItemCategory.AutoSize = true;
+            this.lblAddItemCategory.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemCategory.Location = new System.Drawing.Point(10, 239);
             this.lblAddItemCategory.Name = "lblAddItemCategory";
-            this.lblAddItemCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblAddItemCategory.Size = new System.Drawing.Size(57, 15);
             this.lblAddItemCategory.TabIndex = 37;
             this.lblAddItemCategory.Text = "Category";
             // 

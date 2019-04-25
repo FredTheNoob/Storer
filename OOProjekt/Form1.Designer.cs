@@ -58,20 +58,22 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.Location = new System.Drawing.Point(598, 56);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(41, 13);
+            this.lblSearch.Size = new System.Drawing.Size(47, 15);
             this.lblSearch.TabIndex = 7;
             this.lblSearch.Text = "Search";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(350, 35);
+            this.lblTitle.Font = new System.Drawing.Font("Roboto Thin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(328, 23);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(85, 13);
+            this.lblTitle.Size = new System.Drawing.Size(140, 23);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Welcome USER";
             // 

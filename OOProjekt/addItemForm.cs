@@ -85,7 +85,7 @@ namespace OOProjekt
             ListViewItem lvItem = new ListViewItem(txtName.Text);
             // Move onto the subitem of apple and find column 1 (tabindex 1) and then insert the value 4 into this column (the amount column)
             lvItem.SubItems.Add(nudAddItemAmount.Value.ToString());
-            // If the category typed does NOT exist the a new category gets adde
+            // If the category typed does NOT exist the a new category gets added
             if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
             {
                 cmbItemCategory.Items.Add(cmbItemCategory.Text);
