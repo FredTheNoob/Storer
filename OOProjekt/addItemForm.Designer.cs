@@ -30,9 +30,9 @@
         {
             this.btnMinimize = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Label();
-            this.cmbAddItemCategory = new System.Windows.Forms.ComboBox();
-            this.nudAddItemPlu = new System.Windows.Forms.NumericUpDown();
-            this.nudAddItemPrice = new System.Windows.Forms.NumericUpDown();
+            this.cmbItemCategory = new System.Windows.Forms.ComboBox();
+            this.nudItemPlu = new System.Windows.Forms.NumericUpDown();
+            this.nudItemPrice = new System.Windows.Forms.NumericUpDown();
             this.nudAddItemAmount = new System.Windows.Forms.NumericUpDown();
             this.lblAddItem = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -43,8 +43,8 @@
             this.lblAddItemCategory = new System.Windows.Forms.Label();
             this.lblAddItemName = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAddItemPlu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAddItemPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,27 +83,27 @@
             this.btnExit.MouseEnter += new System.EventHandler(this.BtnExit_MouseEnter);
             this.btnExit.MouseLeave += new System.EventHandler(this.BtnExit_MouseLeave);
             // 
-            // cmbAddItemCategory
+            // cmbItemCategory
             // 
-            this.cmbAddItemCategory.FormattingEnabled = true;
-            this.cmbAddItemCategory.Location = new System.Drawing.Point(74, 236);
-            this.cmbAddItemCategory.Name = "cmbAddItemCategory";
-            this.cmbAddItemCategory.Size = new System.Drawing.Size(235, 21);
-            this.cmbAddItemCategory.TabIndex = 35;
+            this.cmbItemCategory.FormattingEnabled = true;
+            this.cmbItemCategory.Location = new System.Drawing.Point(74, 236);
+            this.cmbItemCategory.Name = "cmbItemCategory";
+            this.cmbItemCategory.Size = new System.Drawing.Size(235, 21);
+            this.cmbItemCategory.TabIndex = 35;
             // 
-            // nudAddItemPlu
+            // nudItemPlu
             // 
-            this.nudAddItemPlu.Location = new System.Drawing.Point(101, 354);
-            this.nudAddItemPlu.Name = "nudAddItemPlu";
-            this.nudAddItemPlu.Size = new System.Drawing.Size(120, 20);
-            this.nudAddItemPlu.TabIndex = 34;
+            this.nudItemPlu.Location = new System.Drawing.Point(101, 354);
+            this.nudItemPlu.Name = "nudItemPlu";
+            this.nudItemPlu.Size = new System.Drawing.Size(120, 20);
+            this.nudItemPlu.TabIndex = 34;
             // 
-            // nudAddItemPrice
+            // nudItemPrice
             // 
-            this.nudAddItemPrice.Location = new System.Drawing.Point(101, 297);
-            this.nudAddItemPrice.Name = "nudAddItemPrice";
-            this.nudAddItemPrice.Size = new System.Drawing.Size(120, 20);
-            this.nudAddItemPrice.TabIndex = 33;
+            this.nudItemPrice.Location = new System.Drawing.Point(101, 297);
+            this.nudItemPrice.Name = "nudItemPrice";
+            this.nudItemPrice.Size = new System.Drawing.Size(120, 20);
+            this.nudItemPrice.TabIndex = 33;
             // 
             // nudAddItemAmount
             // 
@@ -209,9 +209,9 @@
             this.Controls.Add(this.lblAddItemAmount);
             this.Controls.Add(this.lblAddItemCategory);
             this.Controls.Add(this.lblAddItemName);
-            this.Controls.Add(this.cmbAddItemCategory);
-            this.Controls.Add(this.nudAddItemPlu);
-            this.Controls.Add(this.nudAddItemPrice);
+            this.Controls.Add(this.cmbItemCategory);
+            this.Controls.Add(this.nudItemPlu);
+            this.Controls.Add(this.nudItemPrice);
             this.Controls.Add(this.nudAddItemAmount);
             this.Controls.Add(this.lblAddItem);
             this.Controls.Add(this.txtName);
@@ -221,8 +221,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addItemForm";
             this.Text = "addItemForm";
-            ((System.ComponentModel.ISupportInitialize)(this.nudAddItemPlu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAddItemPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -234,9 +234,9 @@
 
         private System.Windows.Forms.Label btnMinimize;
         private System.Windows.Forms.Label btnExit;
-        private System.Windows.Forms.ComboBox cmbAddItemCategory;
-        private System.Windows.Forms.NumericUpDown nudAddItemPlu;
-        private System.Windows.Forms.NumericUpDown nudAddItemPrice;
+        private System.Windows.Forms.ComboBox cmbItemCategory;
+        private System.Windows.Forms.NumericUpDown nudItemPlu;
+        private System.Windows.Forms.NumericUpDown nudItemPrice;
         private System.Windows.Forms.NumericUpDown nudAddItemAmount;
         private System.Windows.Forms.Label lblAddItem;
         private System.Windows.Forms.TextBox txtName;
