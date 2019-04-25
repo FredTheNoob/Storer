@@ -94,6 +94,11 @@
             // nudItemPlu
             // 
             this.nudItemPlu.Location = new System.Drawing.Point(101, 354);
+            this.nudItemPlu.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.nudItemPlu.Name = "nudItemPlu";
             this.nudItemPlu.Size = new System.Drawing.Size(120, 20);
             this.nudItemPlu.TabIndex = 34;
@@ -101,6 +106,11 @@
             // nudItemPrice
             // 
             this.nudItemPrice.Location = new System.Drawing.Point(101, 297);
+            this.nudItemPrice.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
             this.nudItemPrice.Name = "nudItemPrice";
             this.nudItemPrice.Size = new System.Drawing.Size(120, 20);
             this.nudItemPrice.TabIndex = 33;
@@ -108,6 +118,11 @@
             // nudAddItemAmount
             // 
             this.nudAddItemAmount.Location = new System.Drawing.Point(101, 172);
+            this.nudAddItemAmount.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nudAddItemAmount.Name = "nudAddItemAmount";
             this.nudAddItemAmount.Size = new System.Drawing.Size(120, 20);
             this.nudAddItemAmount.TabIndex = 32;
