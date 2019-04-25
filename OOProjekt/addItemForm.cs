@@ -24,11 +24,23 @@ namespace OOProjekt
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-        
+
+        // Make a method to clear the content within the form
+        private void clear()
+        {
+            txtAddBoks.Clear();
+            nudAddItemAmount.ResetText();
+            cmbAddItemCategory.ResetText();
+            nudAddItemPrice.ResetText();
+            nudAddItemPlu.ResetText();
+        }
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // Hide the form temporarily
+            this.Hide();
+            // Call the method called clear to clear/reset all the content/text from the form
+            clear();
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
