@@ -14,7 +14,6 @@ namespace OOProjekt
     public partial class addItemForm : Form
     {
         Form1 refForm1;
-        ListView lvBoks;
         public addItemForm(Form1 Form1)
         {
             refForm1 = Form1;
