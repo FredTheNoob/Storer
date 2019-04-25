@@ -74,7 +74,7 @@
             this.btnExit.Location = new System.Drawing.Point(300, -3);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(22, 24);
+            this.btnExit.Size = new System.Drawing.Size(31, 24);
             this.btnExit.TabIndex = 13;
             this.btnExit.Text = "✖";
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -188,6 +188,7 @@
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // addItemForm
             // 
