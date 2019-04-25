@@ -165,10 +165,11 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Silver;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdd.Location = new System.Drawing.Point(648, 471);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 33);
+            this.btnAdd.Size = new System.Drawing.Size(101, 46);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -180,7 +181,7 @@
             this.btnRemove.Location = new System.Drawing.Point(19, 471);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(101, 33);
+            this.btnRemove.Size = new System.Drawing.Size(101, 46);
             this.btnRemove.TabIndex = 14;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;

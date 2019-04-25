@@ -30,7 +30,7 @@ namespace OOProjekt
         // Make a method to clear the content within the form
         private void clear()
         {
-            txtAddBoks.Clear();
+            txtName.Clear();
             nudAddItemAmount.ResetText();
             cmbAddItemCategory.ResetText();
             nudAddItemPrice.ResetText();

@@ -35,7 +35,7 @@
             this.nudAddItemPrice = new System.Windows.Forms.NumericUpDown();
             this.nudAddItemAmount = new System.Windows.Forms.NumericUpDown();
             this.lblAddItem = new System.Windows.Forms.Label();
-            this.txtAddBoks = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblAddItemPlu = new System.Windows.Forms.Label();
             this.lblAddItemPrice = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.btnExit.Location = new System.Drawing.Point(300, -3);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(22, 24);
+            this.btnExit.Size = new System.Drawing.Size(31, 24);
             this.btnExit.TabIndex = 13;
             this.btnExit.Text = "✖";
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -115,18 +115,19 @@
             // lblAddItem
             // 
             this.lblAddItem.AutoSize = true;
-            this.lblAddItem.Location = new System.Drawing.Point(102, 50);
+            this.lblAddItem.Font = new System.Drawing.Font("Roboto Thin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItem.Location = new System.Drawing.Point(31, 44);
             this.lblAddItem.Name = "lblAddItem";
-            this.lblAddItem.Size = new System.Drawing.Size(127, 13);
+            this.lblAddItem.Size = new System.Drawing.Size(278, 29);
             this.lblAddItem.TabIndex = 31;
             this.lblAddItem.Text = "Add an item to your stock";
             // 
-            // txtAddBoks
+            // txtName
             // 
-            this.txtAddBoks.Location = new System.Drawing.Point(74, 112);
-            this.txtAddBoks.Name = "txtAddBoks";
-            this.txtAddBoks.Size = new System.Drawing.Size(235, 20);
-            this.txtAddBoks.TabIndex = 30;
+            this.txtName.Location = new System.Drawing.Point(74, 112);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(235, 20);
+            this.txtName.TabIndex = 30;
             // 
             // pictureBox1
             // 
@@ -160,9 +161,10 @@
             // lblAddItemAmount
             // 
             this.lblAddItemAmount.AutoSize = true;
+            this.lblAddItemAmount.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemAmount.Location = new System.Drawing.Point(9, 174);
             this.lblAddItemAmount.Name = "lblAddItemAmount";
-            this.lblAddItemAmount.Size = new System.Drawing.Size(43, 13);
+            this.lblAddItemAmount.Size = new System.Drawing.Size(52, 15);
             this.lblAddItemAmount.TabIndex = 38;
             this.lblAddItemAmount.Text = "Amount";
             // 
@@ -178,20 +180,22 @@
             // lblAddItemName
             // 
             this.lblAddItemName.AutoSize = true;
+            this.lblAddItemName.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemName.Location = new System.Drawing.Point(12, 115);
             this.lblAddItemName.Name = "lblAddItemName";
-            this.lblAddItemName.Size = new System.Drawing.Size(35, 13);
+            this.lblAddItemName.Size = new System.Drawing.Size(42, 15);
             this.lblAddItemName.TabIndex = 36;
             this.lblAddItemName.Text = "Name";
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.Silver;
             this.btnAdd.Location = new System.Drawing.Point(105, 390);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 48);
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // addItemForm
@@ -210,7 +214,7 @@
             this.Controls.Add(this.nudAddItemPrice);
             this.Controls.Add(this.nudAddItemAmount);
             this.Controls.Add(this.lblAddItem);
-            this.Controls.Add(this.txtAddBoks);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
@@ -235,7 +239,7 @@
         private System.Windows.Forms.NumericUpDown nudAddItemPrice;
         private System.Windows.Forms.NumericUpDown nudAddItemAmount;
         private System.Windows.Forms.Label lblAddItem;
-        private System.Windows.Forms.TextBox txtAddBoks;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblAddItemPlu;
         private System.Windows.Forms.Label lblAddItemPrice;

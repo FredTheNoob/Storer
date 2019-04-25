@@ -17,6 +17,7 @@ namespace OOProjekt
     public partial class Form1 : Form
     {
         addItemForm refItemForm;
+        // Make a public accessible ListView
         public ListView MainListView;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -29,12 +30,6 @@ namespace OOProjekt
         {
             InitializeComponent();
         }
-
-        public void reloadMainList()
-        {
-            lvBoks = MainListView;
-        }
-
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
