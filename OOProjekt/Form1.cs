@@ -16,6 +16,8 @@ namespace OOProjekt
 {
     public partial class Form1 : Form
     {
+        addItemForm addItemForm;
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [DllImportAttribute("user32.dll")]
@@ -89,14 +91,19 @@ namespace OOProjekt
             // Make an int called selectCount and store the selected 
             int selectCount = lvBoks.SelectedItems.Count;
 
-            if(selectCount == 1)
+            // If the user only has selected 1 item from the listView
+            if (selectCount == 1)
             {
+                // Remove 1 item from the array selected in the 
                 lvBoks.SelectedItems[0].Remove();
             }
-            else if(selectCount > 1)
+            // If the user has selected more than 1 item
+            else if (selectCount > 1)
             {
+                // Remove each item inside the listView
                 foreach (ListViewItem eachItem in lvBoks.SelectedItems)
                 {
+                    // Remove the selected items
                     lvBoks.Items.Remove(eachItem);
                 }
             }
