@@ -40,9 +40,10 @@
             this.clnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnPlu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnSell = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +72,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Roboto Thin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(320, 33);
+            this.lblTitle.Location = new System.Drawing.Point(311, 32);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(140, 23);
@@ -165,18 +166,18 @@
             this.clnPlu.Text = "PLU";
             this.clnPlu.Width = 62;
             // 
-            // btnAdd
+            // btnNew
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Silver;
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdd.Location = new System.Drawing.Point(648, 471);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 46);
-            this.btnAdd.TabIndex = 13;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.btnNew.BackColor = System.Drawing.Color.Silver;
+            this.btnNew.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNew.Location = new System.Drawing.Point(648, 471);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(101, 46);
+            this.btnNew.TabIndex = 13;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // btnRemove
             // 
@@ -194,7 +195,7 @@
             // 
             this.btnSell.BackColor = System.Drawing.Color.Silver;
             this.btnSell.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSell.Location = new System.Drawing.Point(336, 471);
+            this.btnSell.Location = new System.Drawing.Point(400, 471);
             this.btnSell.Margin = new System.Windows.Forms.Padding(2);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(101, 46);
@@ -203,15 +204,28 @@
             this.btnSell.UseVisualStyleBackColor = false;
             this.btnSell.Click += new System.EventHandler(this.BtnSell_Click);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Silver;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.Location = new System.Drawing.Point(268, 471);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(101, 46);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(770, 528);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSell);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.lvBoks);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnExit);
@@ -242,10 +256,11 @@
         private System.Windows.Forms.ColumnHeader clnCategory;
         private System.Windows.Forms.ColumnHeader clnPrice;
         private System.Windows.Forms.ColumnHeader clnPlu;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.ColumnHeader clnAmount;
         private System.Windows.Forms.Button btnSell;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
 
