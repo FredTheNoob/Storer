@@ -74,7 +74,7 @@
             this.btnExit.Location = new System.Drawing.Point(300, -3);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 24);
+            this.btnExit.Size = new System.Drawing.Size(22, 24);
             this.btnExit.TabIndex = 13;
             this.btnExit.Text = "✖";
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -82,9 +82,9 @@
             // cmbAddItemCategory
             // 
             this.cmbAddItemCategory.FormattingEnabled = true;
-            this.cmbAddItemCategory.Location = new System.Drawing.Point(69, 236);
+            this.cmbAddItemCategory.Location = new System.Drawing.Point(74, 236);
             this.cmbAddItemCategory.Name = "cmbAddItemCategory";
-            this.cmbAddItemCategory.Size = new System.Drawing.Size(247, 21);
+            this.cmbAddItemCategory.Size = new System.Drawing.Size(235, 21);
             this.cmbAddItemCategory.TabIndex = 35;
             // 
             // nudAddItemPlu
