@@ -123,5 +123,25 @@ namespace OOProjekt
         {
             
         }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LvBoks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // If one item has been selected
+            if (lvBoks.SelectedItems.Count == 1)
+            {
+                // Make the edit button clickable
+                btnEdit.Enabled = true;
+            }
+            else
+            {
+                // Make the button unclickable
+                btnEdit.Enabled = false;
+            }
+        }
     }
 }
