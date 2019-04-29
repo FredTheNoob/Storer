@@ -85,8 +85,8 @@ namespace OOProjekt
             // If the user has not selected anything from the listView
             if (selectCount == 0)
             {
-                // Prompts the user with a message, informing him that he needs to select an item
-                MessageBox.Show("Please select an item from the list above");
+                // Prompts the user with a message, informing him that he needs to select an item, make a warning icon and an ok button on the messagebox too
+                MessageBox.Show("Please select an item from the list above", "No item selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (selectCount > 0)
