@@ -83,33 +83,67 @@ namespace OOProjekt
         {
             // Make an int called selectCount and store the selected 
             int selectCount = lvBoks.SelectedItems.Count;
-            // Prompt the user with a message asking whether or not he wants to remove the selected items in the listView and set the icon of the messagebox to a infoicon
-            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            // If the user presses yes
-            if (dialogResult == DialogResult.Yes)
+
+            // If the user has not selected anything from the listView
+            if (selectCount == 0)
             {
-                // If the user only has selected 1 item from the listView
-                if (selectCount == 1)
+                // Prompts the user with a message, informing him that he needs to select an item, make a warning icon and an ok button on the messagebox too
+                MessageBox.Show("Please select an item from the list above", "No item selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (selectCount > 0)
+            {
+                // Prompt the user with a message asking whether or not he wants to remove the selected items in the listView and set the icon of the messagebox to a infoicon
+                DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                // If the user presses yes
+                if (dialogResult == DialogResult.Yes)
                 {
-                    // Remove 1 item from the array selected in the listView
-                    lvBoks.SelectedItems[0].Remove();
-                }
-                // If the user has selected more than 1 item
-                else if (selectCount > 1)
-                {
-                    // Remove each item inside the listView
-                    foreach (ListViewItem eachItem in lvBoks.SelectedItems)
+                    // If the user only has selected 1 item from the listView
+                    if (selectCount == 1)
                     {
-                        // Remove the selected items
-                        lvBoks.Items.Remove(eachItem);
+                        // Remove 1 item from the array selected in the listView
+                        lvBoks.SelectedItems[0].Remove();
+                    }
+                    // If the user has selected more than 1 item
+                    else if (selectCount > 1)
+                    {
+                        // Remove each item inside the listView
+                        foreach (ListViewItem eachItem in lvBoks.SelectedItems)
+                        {
+                            // Remove the selected items
+                            lvBoks.Items.Remove(eachItem);
+                        }
                     }
                 }
             }
+
+            
         }
 
         private void BtnSell_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LvBoks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // If one item has been selected
+            if (lvBoks.SelectedItems.Count == 1)
+            {
+                // Make the edit button clickable
+                btnEdit.Enabled = true;
+            }
+            else
+            {
+                // Make the button unclickable
+                btnEdit.Enabled = false;
+            }
         }
     }
 }
