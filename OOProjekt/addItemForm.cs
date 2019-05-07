@@ -91,8 +91,11 @@ namespace OOProjekt
         {
             // Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
             ListViewItem lvItem = new ListViewItem(txtName.Text);
+            // Creating a new item in our itemStock class
+            itemStock product = new itemStock();
             // Move onto the subitem of the given data from the user given in the nudAddItemAmount and insert the value into the column of the listView (the amount column)
             lvItem.SubItems.Add(nudAddItemAmount.Value.ToString());
+            product.Amount = (int)nudAddItemAmount.Value;
             // If the category typed does NOT exist the a new category gets added
             if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
             {

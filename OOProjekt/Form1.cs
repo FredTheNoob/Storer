@@ -19,6 +19,7 @@ namespace OOProjekt
         addItemForm refItemForm;
         // Make a public accessible ListView
         public ListView MainListView;
+        public List<itemStock> itemStockList;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -75,6 +76,7 @@ namespace OOProjekt
         {
             refItemForm = new addItemForm(this);
             MainListView = lvBoks;
+            itemStockList = new List<itemStock>();
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)

@@ -88,12 +88,12 @@
             this.cmbItemCategory.FormattingEnabled = true;
             this.cmbItemCategory.Location = new System.Drawing.Point(74, 236);
             this.cmbItemCategory.Name = "cmbItemCategory";
-            this.cmbItemCategory.Size = new System.Drawing.Size(235, 21);
+            this.cmbItemCategory.Size = new System.Drawing.Size(187, 21);
             this.cmbItemCategory.TabIndex = 35;
             // 
             // nudItemPlu
             // 
-            this.nudItemPlu.Location = new System.Drawing.Point(101, 354);
+            this.nudItemPlu.Location = new System.Drawing.Point(74, 354);
             this.nudItemPlu.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -105,7 +105,7 @@
             // 
             // nudItemPrice
             // 
-            this.nudItemPrice.Location = new System.Drawing.Point(101, 297);
+            this.nudItemPrice.Location = new System.Drawing.Point(74, 297);
             this.nudItemPrice.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -117,7 +117,7 @@
             // 
             // nudAddItemAmount
             // 
-            this.nudAddItemAmount.Location = new System.Drawing.Point(101, 172);
+            this.nudAddItemAmount.Location = new System.Drawing.Point(74, 172);
             this.nudAddItemAmount.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -130,10 +130,10 @@
             // lblAddItem
             // 
             this.lblAddItem.AutoSize = true;
-            this.lblAddItem.Font = new System.Drawing.Font("Roboto Thin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItem.Location = new System.Drawing.Point(31, 44);
             this.lblAddItem.Name = "lblAddItem";
-            this.lblAddItem.Size = new System.Drawing.Size(278, 29);
+            this.lblAddItem.Size = new System.Drawing.Size(280, 29);
             this.lblAddItem.TabIndex = 31;
             this.lblAddItem.Text = "Add an item to your stock";
             // 
@@ -158,50 +158,50 @@
             // lblAddItemPlu
             // 
             this.lblAddItemPlu.AutoSize = true;
-            this.lblAddItemPlu.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemPlu.Location = new System.Drawing.Point(12, 354);
+            this.lblAddItemPlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemPlu.Location = new System.Drawing.Point(39, 354);
             this.lblAddItemPlu.Name = "lblAddItemPlu";
-            this.lblAddItemPlu.Size = new System.Drawing.Size(31, 15);
+            this.lblAddItemPlu.Size = new System.Drawing.Size(34, 16);
             this.lblAddItemPlu.TabIndex = 40;
             this.lblAddItemPlu.Text = "PLU";
             // 
             // lblAddItemPrice
             // 
             this.lblAddItemPrice.AutoSize = true;
-            this.lblAddItemPrice.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemPrice.Location = new System.Drawing.Point(12, 299);
+            this.lblAddItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemPrice.Location = new System.Drawing.Point(34, 297);
             this.lblAddItemPrice.Name = "lblAddItemPrice";
-            this.lblAddItemPrice.Size = new System.Drawing.Size(36, 15);
+            this.lblAddItemPrice.Size = new System.Drawing.Size(39, 16);
             this.lblAddItemPrice.TabIndex = 39;
             this.lblAddItemPrice.Text = "Price";
             // 
             // lblAddItemAmount
             // 
             this.lblAddItemAmount.AutoSize = true;
-            this.lblAddItemAmount.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemAmount.Location = new System.Drawing.Point(9, 174);
+            this.lblAddItemAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemAmount.Location = new System.Drawing.Point(20, 172);
             this.lblAddItemAmount.Name = "lblAddItemAmount";
-            this.lblAddItemAmount.Size = new System.Drawing.Size(52, 15);
+            this.lblAddItemAmount.Size = new System.Drawing.Size(53, 16);
             this.lblAddItemAmount.TabIndex = 38;
             this.lblAddItemAmount.Text = "Amount";
             // 
             // lblAddItemCategory
             // 
             this.lblAddItemCategory.AutoSize = true;
-            this.lblAddItemCategory.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemCategory.Location = new System.Drawing.Point(10, 239);
+            this.lblAddItemCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemCategory.Location = new System.Drawing.Point(10, 237);
             this.lblAddItemCategory.Name = "lblAddItemCategory";
-            this.lblAddItemCategory.Size = new System.Drawing.Size(57, 15);
+            this.lblAddItemCategory.Size = new System.Drawing.Size(63, 16);
             this.lblAddItemCategory.TabIndex = 37;
             this.lblAddItemCategory.Text = "Category";
             // 
             // lblAddItemName
             // 
             this.lblAddItemName.AutoSize = true;
-            this.lblAddItemName.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemName.Location = new System.Drawing.Point(12, 115);
+            this.lblAddItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemName.Location = new System.Drawing.Point(28, 116);
             this.lblAddItemName.Name = "lblAddItemName";
-            this.lblAddItemName.Size = new System.Drawing.Size(42, 15);
+            this.lblAddItemName.Size = new System.Drawing.Size(45, 16);
             this.lblAddItemName.TabIndex = 36;
             this.lblAddItemName.Text = "Name";
             // 
