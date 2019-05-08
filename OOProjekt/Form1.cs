@@ -211,6 +211,11 @@ namespace OOProjekt
             
         }
 
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            lvBoks.Items[lvBoks.SelectedItems[0].Index].SubItems[1].Text = "LuL";
+        }
+
         private void LvBoks_SelectedIndexChanged(object sender, EventArgs e)
         {
             // If one item has been selected
