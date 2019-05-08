@@ -164,6 +164,7 @@ namespace OOProjekt
 
         #endregion FormReferences
 
+        // Removes selected items if possible
         private void BtnRemove_Click(object sender, EventArgs e)
         {
             // Make an int called selectCount and store the selected 
@@ -202,10 +203,7 @@ namespace OOProjekt
                     }
                 }
             }
-
-            
         }
-
         private void BtnSell_Click(object sender, EventArgs e)
         {
             

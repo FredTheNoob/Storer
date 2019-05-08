@@ -100,7 +100,6 @@ namespace OOProjekt
             // Same as above (--||--)
             lvItem.SubItems.Add(nudItemPlu.Value.ToString());
             // Add the items into the listview of the variable lvItem
-            refForm1.MainListView.Items.Add(lvItem);
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
