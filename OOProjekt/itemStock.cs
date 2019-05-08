@@ -13,6 +13,7 @@ namespace OOProjekt
         public string Category { get; set; }
         public float Price { get; set; }
         public int Amount { get; set; }
+        public int Id { get; set; }
 
         public void Sell(int _amount)
         {

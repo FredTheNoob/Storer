@@ -57,26 +57,27 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(108, 20);
             this.txtSearch.TabIndex = 6;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSearch_KeyPress);
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Roboto Thin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.Location = new System.Drawing.Point(592, 55);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(47, 15);
+            this.lblSearch.Size = new System.Drawing.Size(51, 16);
             this.lblSearch.TabIndex = 7;
             this.lblSearch.Text = "Search";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(285, 23);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(202, 33);
+            this.lblTitle.Size = new System.Drawing.Size(221, 31);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Welcome USER";
             // 
@@ -133,6 +134,7 @@
             this.clnPlu});
             this.lvBoks.FullRowSelect = true;
             this.lvBoks.GridLines = true;
+            this.lvBoks.HideSelection = false;
             this.lvBoks.Location = new System.Drawing.Point(19, 80);
             this.lvBoks.Margin = new System.Windows.Forms.Padding(2);
             this.lvBoks.Name = "lvBoks";

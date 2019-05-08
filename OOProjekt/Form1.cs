@@ -145,5 +145,11 @@ namespace OOProjekt
                 btnEdit.Enabled = false;
             }
         }
+
+        // When a key is pressed while inside the search textbox
+        private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Search method code here
+        }
     }
 }
