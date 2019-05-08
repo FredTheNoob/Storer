@@ -17,6 +17,7 @@ namespace OOProjekt
     public partial class Form1 : Form
     {
         addItemForm refItemForm;
+        editItemForm refEditForm;
         // Make a public accessible ListView
         public ListView MainListView;
         public List<itemStock> itemStockList;
@@ -67,11 +68,6 @@ namespace OOProjekt
         private void BtnMinimize_MouseLeave(object sender, EventArgs e)
         {
             btnMinimize.BackColor = pictureBox1.BackColor;
-        }
-
-        private void BtnNew_Click(object sender, EventArgs e)
-        {
-            refItemForm.Show();
         }
 
         private void BtnNew_MouseEnter(object sender, EventArgs e)
@@ -150,9 +146,23 @@ namespace OOProjekt
         private void Form1_Load(object sender, EventArgs e)
         {
             refItemForm = new addItemForm(this);
+            refEditForm = new editItemForm(this);
             MainListView = lvBoks;
             itemStockList = new List<itemStock>();
         }
+
+        #region FormReferences
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+            refItemForm.Show();
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            refEditForm.Show();
+        }
+
+        #endregion FormReferences
 
         private void BtnRemove_Click(object sender, EventArgs e)
         {
@@ -199,11 +209,6 @@ namespace OOProjekt
         private void BtnSell_Click(object sender, EventArgs e)
         {
             
-        }
-
-        private void BtnEdit_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void LvBoks_SelectedIndexChanged(object sender, EventArgs e)

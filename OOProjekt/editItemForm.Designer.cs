@@ -133,9 +133,9 @@
             this.lblEditItem.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditItem.Location = new System.Drawing.Point(18, 43);
             this.lblEditItem.Name = "lblEditItem";
-            this.lblEditItem.Size = new System.Drawing.Size(312, 29);
+            this.lblEditItem.Size = new System.Drawing.Size(309, 29);
             this.lblEditItem.TabIndex = 31;
-            this.lblEditItem.Text = "Edit an item to your stock";
+            this.lblEditItem.Text = "Edit an item in your stock";
             // 
             // txtName
             // 

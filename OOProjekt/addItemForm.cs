@@ -20,6 +20,8 @@ namespace OOProjekt
             InitializeComponent();
         }
 
+        #region CustomUI
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [DllImportAttribute("user32.dll")]
@@ -27,36 +29,9 @@ namespace OOProjekt
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        ////////////////
-        /// METHODS ///
-        //////////////
-        
-        // Define a method to clear the content within the form
-        private void clear()
-        {
-            txtName.Clear();
-            nudAddItemAmount.ResetText();
-            cmbItemCategory.ResetText();
-            nudItemPrice.ResetText();
-            nudItemPlu.ResetText();
-        }
-
         //////////////////////
         /// EVENTHANDLERS ///
         ////////////////////
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            // Hide the form temporarily
-            this.Hide();
-            // Call the method called clear to clear/reset all the content/text from the form
-            clear();
-        }
-
-        private void BtnMinimize_Click(object sender, EventArgs e)
-        {
-            // Minimize the window
-            this.WindowState = FormWindowState.Minimized;
-        }
 
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
@@ -87,6 +62,22 @@ namespace OOProjekt
             btnExit.BackColor = pictureBox1.BackColor;
         }
 
+        private void BtnAdd_MouseEnter(object sender, EventArgs e)
+        {
+            btnAdd.BackColor = Color.DodgerBlue;
+            btnAdd.ForeColor = Color.Silver;
+            btnAdd.FlatAppearance.BorderColor = Color.Silver;
+        }
+
+        private void BtnAdd_MouseLeave(object sender, EventArgs e)
+        {
+            btnAdd.BackColor = Color.Silver;
+            btnAdd.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnAdd.ForeColor = Color.DodgerBlue;
+        }
+
+        #endregion CustomUI
+
         // BtnAdd settings!
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -112,18 +103,32 @@ namespace OOProjekt
             refForm1.MainListView.Items.Add(lvItem);
         }
 
-        private void BtnAdd_MouseEnter(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
-            btnAdd.BackColor = Color.DodgerBlue;
-            btnAdd.ForeColor = Color.Silver;
-            btnAdd.FlatAppearance.BorderColor = Color.Silver;
+            // Hide the form temporarily
+            this.Hide();
+            // Call the method called clear to clear/reset all the content/text from the form
+            clear();
         }
 
-        private void BtnAdd_MouseLeave(object sender, EventArgs e)
+        private void BtnMinimize_Click(object sender, EventArgs e)
         {
-            btnAdd.BackColor = Color.Silver;
-            btnAdd.FlatAppearance.BorderColor = Color.DodgerBlue;
-            btnAdd.ForeColor = Color.DodgerBlue;
+            // Minimize the window
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        ////////////////
+        /// METHODS ///
+        //////////////
+
+        // Define a method to clear the content within the form
+        private void clear()
+        {
+            txtName.Clear();
+            nudAddItemAmount.ResetText();
+            cmbItemCategory.ResetText();
+            nudItemPrice.ResetText();
+            nudItemPlu.ResetText();
         }
     }
 }
