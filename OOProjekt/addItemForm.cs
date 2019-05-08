@@ -20,6 +20,7 @@ namespace OOProjekt
             InitializeComponent();
         }
 
+        // Here we are hiding all the custom UI code (this code just changes colors)
         #region CustomUI
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -28,10 +29,6 @@ namespace OOProjekt
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-
-        //////////////////////
-        /// EVENTHANDLERS ///
-        ////////////////////
 
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
@@ -100,6 +97,21 @@ namespace OOProjekt
             // Same as above (--||--)
             lvItem.SubItems.Add(nudItemPlu.Value.ToString());
             // Add the items into the listview of the variable lvItem
+
+            bool alreadyExists = false;
+            foreach (ListViewItem item in refForm1.MainListView.Items)
+                if (item.SubItems[4].Text == nudItemPlu.Value.ToString())
+                {
+                    alreadyExists = true;
+                    break;
+                }
+
+            if (alreadyExists)
+                MessageBox.Show("Another product already has this PLU", "Warning PLU exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                refForm1.MainListView.Items.Add(lvItem);
+
+
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -107,7 +119,7 @@ namespace OOProjekt
             // Hide the form temporarily
             this.Hide();
             // Call the method called clear to clear/reset all the content/text from the form
-            clear();
+            clearFields();
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
@@ -121,13 +133,13 @@ namespace OOProjekt
         //////////////
 
         // Define a method to clear the content within the form
-        private void clear()
+        private void clearFields()
         {
             txtName.Clear();
-            nudAddItemAmount.ResetText();
-            cmbItemCategory.ResetText();
-            nudItemPrice.ResetText();
-            nudItemPlu.ResetText();
+            nudAddItemAmount.Value = 0;
+            cmbItemCategory.Text = "";
+            nudItemPrice.Value = 0;
+            nudItemPlu.Value = 0;
         }
     }
 }
