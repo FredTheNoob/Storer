@@ -1,6 +1,6 @@
 ﻿namespace OOProjekt
 {
-    partial class addItemForm
+    partial class editItemForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.nudItemPlu = new System.Windows.Forms.NumericUpDown();
             this.nudItemPrice = new System.Windows.Forms.NumericUpDown();
             this.nudAddItemAmount = new System.Windows.Forms.NumericUpDown();
-            this.lblAddItem = new System.Windows.Forms.Label();
+            this.lblEditItem = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblAddItemPlu = new System.Windows.Forms.Label();
@@ -127,15 +127,15 @@
             this.nudAddItemAmount.Size = new System.Drawing.Size(120, 20);
             this.nudAddItemAmount.TabIndex = 32;
             // 
-            // lblAddItem
+            // lblEditItem
             // 
-            this.lblAddItem.AutoSize = true;
-            this.lblAddItem.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItem.Location = new System.Drawing.Point(18, 43);
-            this.lblAddItem.Name = "lblAddItem";
-            this.lblAddItem.Size = new System.Drawing.Size(313, 29);
-            this.lblAddItem.TabIndex = 31;
-            this.lblAddItem.Text = "Add an item to your stock";
+            this.lblEditItem.AutoSize = true;
+            this.lblEditItem.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditItem.Location = new System.Drawing.Point(18, 43);
+            this.lblEditItem.Name = "lblEditItem";
+            this.lblEditItem.Size = new System.Drawing.Size(312, 29);
+            this.lblEditItem.TabIndex = 31;
+            this.lblEditItem.Text = "Edit an item to your stock";
             // 
             // txtName
             // 
@@ -222,7 +222,7 @@
             this.btnAdd.MouseEnter += new System.EventHandler(this.BtnAdd_MouseEnter);
             this.btnAdd.MouseLeave += new System.EventHandler(this.BtnAdd_MouseLeave);
             // 
-            // addItemForm
+            // editItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -238,13 +238,13 @@
             this.Controls.Add(this.nudItemPlu);
             this.Controls.Add(this.nudItemPrice);
             this.Controls.Add(this.nudAddItemAmount);
-            this.Controls.Add(this.lblAddItem);
+            this.Controls.Add(this.lblEditItem);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "addItemForm";
+            this.Name = "editItemForm";
             this.Text = "addItemForm";
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).EndInit();
@@ -263,7 +263,7 @@
         private System.Windows.Forms.NumericUpDown nudItemPlu;
         private System.Windows.Forms.NumericUpDown nudItemPrice;
         private System.Windows.Forms.NumericUpDown nudAddItemAmount;
-        private System.Windows.Forms.Label lblAddItem;
+        private System.Windows.Forms.Label lblEditItem;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblAddItemPlu;

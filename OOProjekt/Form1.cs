@@ -21,6 +21,8 @@ namespace OOProjekt
         public ListView MainListView;
         public List<itemStock> itemStockList;
 
+        #region customUI
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [DllImportAttribute("user32.dll")]
@@ -71,6 +73,79 @@ namespace OOProjekt
         {
             refItemForm.Show();
         }
+
+        private void BtnNew_MouseEnter(object sender, EventArgs e)
+        {
+            // Invert the colors by changing the background color to blue and text in the button to silver and the border on the button to silver
+            btnNew.BackColor = Color.DodgerBlue;
+            btnNew.ForeColor = Color.Silver;
+            btnNew.FlatAppearance.BorderColor = Color.Silver;
+        }
+
+        private void BtnNew_MouseLeave(object sender, EventArgs e)
+        {
+            btnNew.BackColor = Color.Silver;
+            btnNew.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnNew.ForeColor = Color.DodgerBlue;
+        }
+
+        private void BtnSell_MouseEnter(object sender, EventArgs e)
+        {
+            btnSell.BackColor = Color.DodgerBlue;
+            btnSell.ForeColor = Color.Silver;
+            btnSell.FlatAppearance.BorderColor = Color.Silver;
+        }
+
+        private void BtnSell_MouseLeave(object sender, EventArgs e)
+        {
+            btnSell.BackColor = Color.Silver;
+            btnSell.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnSell.ForeColor = Color.DodgerBlue;
+        }
+
+        private void BtnAdd_MouseEnter(object sender, EventArgs e)
+        {
+            btnAdd.BackColor = Color.DodgerBlue;
+            btnAdd.ForeColor = Color.Silver;
+            btnAdd.FlatAppearance.BorderColor = Color.Silver;
+        }
+
+        private void BtnAdd_MouseLeave(object sender, EventArgs e)
+        {
+            btnAdd.BackColor = Color.Silver;
+            btnAdd.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnAdd.ForeColor = Color.DodgerBlue;
+        }
+
+        private void BtnEdit_MouseEnter(object sender, EventArgs e)
+        {
+            btnEdit.BackColor = Color.DodgerBlue;
+            btnEdit.ForeColor = Color.Silver;
+            btnEdit.FlatAppearance.BorderColor = Color.Silver;
+        }
+
+        private void BtnEdit_MouseLeave(object sender, EventArgs e)
+        {
+            btnEdit.BackColor = Color.Silver;
+            btnEdit.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnEdit.ForeColor = Color.DodgerBlue;
+        }
+
+        private void BtnRemove_MouseEnter(object sender, EventArgs e)
+        {
+            btnRemove.BackColor = Color.DodgerBlue;
+            btnRemove.ForeColor = Color.Silver;
+            btnRemove.FlatAppearance.BorderColor = Color.Silver;
+        }
+
+        private void BtnRemove_MouseLeave(object sender, EventArgs e)
+        {
+            btnRemove.BackColor = Color.Silver;
+            btnRemove.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnRemove.ForeColor = Color.DodgerBlue;
+        }
+
+        #endregion customUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -138,11 +213,15 @@ namespace OOProjekt
             {
                 // Make the edit button clickable
                 btnEdit.Enabled = true;
+                btnEdit.BackColor = Color.Silver;
+                btnEdit.FlatAppearance.BorderColor = Color.DodgerBlue;
+                btnEdit.ForeColor = Color.DodgerBlue;
             }
             else
             {
                 // Make the button unclickable
                 btnEdit.Enabled = false;
+                btnEdit.FlatAppearance.BorderColor = Color.DimGray;
             }
         }
 

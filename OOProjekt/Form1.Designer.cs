@@ -62,22 +62,22 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(592, 55);
+            this.lblSearch.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(581, 53);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(51, 16);
+            this.lblSearch.Size = new System.Drawing.Size(58, 19);
             this.lblSearch.TabIndex = 7;
             this.lblSearch.Text = "Search";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(285, 23);
+            this.lblTitle.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(292, 23);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(221, 31);
+            this.lblTitle.Size = new System.Drawing.Size(200, 33);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Welcome USER";
             // 
@@ -126,6 +126,7 @@
             // 
             // lvBoks
             // 
+            this.lvBoks.BackColor = System.Drawing.Color.White;
             this.lvBoks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clnName,
             this.clnAmount,
@@ -173,8 +174,11 @@
             // btnNew
             // 
             this.btnNew.BackColor = System.Drawing.Color.Silver;
-            this.btnNew.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNew.Location = new System.Drawing.Point(648, 471);
+            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnNew.Location = new System.Drawing.Point(650, 471);
             this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(101, 46);
@@ -182,10 +186,16 @@
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
+            this.btnNew.MouseEnter += new System.EventHandler(this.BtnNew_MouseEnter);
+            this.btnNew.MouseLeave += new System.EventHandler(this.BtnNew_MouseLeave);
             // 
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.Silver;
+            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.ForeColor = System.Drawing.Color.DodgerBlue;
             this.btnRemove.Location = new System.Drawing.Point(19, 471);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
@@ -194,11 +204,16 @@
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
+            this.btnRemove.MouseEnter += new System.EventHandler(this.BtnRemove_MouseEnter);
+            this.btnRemove.MouseLeave += new System.EventHandler(this.BtnRemove_MouseLeave);
             // 
             // btnSell
             // 
             this.btnSell.BackColor = System.Drawing.Color.Silver;
-            this.btnSell.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSell.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSell.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSell.ForeColor = System.Drawing.Color.DodgerBlue;
             this.btnSell.Location = new System.Drawing.Point(400, 471);
             this.btnSell.Margin = new System.Windows.Forms.Padding(2);
             this.btnSell.Name = "btnSell";
@@ -207,11 +222,16 @@
             this.btnSell.Text = "Sell";
             this.btnSell.UseVisualStyleBackColor = false;
             this.btnSell.Click += new System.EventHandler(this.BtnSell_Click);
+            this.btnSell.MouseEnter += new System.EventHandler(this.BtnSell_MouseEnter);
+            this.btnSell.MouseLeave += new System.EventHandler(this.BtnSell_MouseLeave);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Silver;
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.DodgerBlue;
             this.btnAdd.Location = new System.Drawing.Point(268, 471);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
@@ -219,12 +239,17 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.MouseEnter += new System.EventHandler(this.BtnAdd_MouseEnter);
+            this.btnAdd.MouseLeave += new System.EventHandler(this.BtnAdd_MouseLeave);
             // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Silver;
             this.btnEdit.Enabled = false;
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.DodgerBlue;
             this.btnEdit.Location = new System.Drawing.Point(145, 471);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
@@ -233,12 +258,14 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            this.btnEdit.MouseEnter += new System.EventHandler(this.BtnEdit_MouseEnter);
+            this.btnEdit.MouseLeave += new System.EventHandler(this.BtnEdit_MouseLeave);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(770, 528);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
