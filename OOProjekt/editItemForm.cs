@@ -11,10 +11,10 @@ using System.Runtime.InteropServices;
 
 namespace OOProjekt
 {
-    public partial class addItemForm : Form
+    public partial class editItemForm : Form
     {
         Form1 refForm1;
-        public addItemForm(Form1 Form1)
+        public editItemForm(Form1 Form1)
         {
             refForm1 = Form1;
             InitializeComponent();
