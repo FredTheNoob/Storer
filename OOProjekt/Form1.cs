@@ -151,15 +151,15 @@ namespace OOProjekt
             itemStockList = new List<itemStock>();
         }
 
-        #region FormReferences
+        #region ExternalFormVisability
         private void BtnNew_Click(object sender, EventArgs e)
         {
             refItemForm.Show();
         }
-
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             refEditForm.Show();
+            //lvBoks.Items[lvBoks.SelectedItems[0].Index].SubItems[1].Text = "LuL";
         }
 
         #endregion FormReferences
@@ -209,11 +209,6 @@ namespace OOProjekt
         private void BtnSell_Click(object sender, EventArgs e)
         {
             
-        }
-
-        private void BtnEdit_Click(object sender, EventArgs e)
-        {
-            lvBoks.Items[lvBoks.SelectedItems[0].Index].SubItems[1].Text = "LuL";
         }
 
         private void LvBoks_SelectedIndexChanged(object sender, EventArgs e)
