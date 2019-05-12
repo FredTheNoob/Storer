@@ -50,6 +50,8 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearch.BackColor = System.Drawing.Color.Silver;
             this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtSearch.Location = new System.Drawing.Point(643, 53);
