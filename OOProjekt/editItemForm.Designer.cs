@@ -130,10 +130,10 @@
             // lblEditItem
             // 
             this.lblEditItem.AutoSize = true;
-            this.lblEditItem.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditItem.Location = new System.Drawing.Point(18, 43);
             this.lblEditItem.Name = "lblEditItem";
-            this.lblEditItem.Size = new System.Drawing.Size(309, 29);
+            this.lblEditItem.Size = new System.Drawing.Size(304, 29);
             this.lblEditItem.TabIndex = 31;
             this.lblEditItem.Text = "Edit an item in your stock";
             // 
@@ -210,7 +210,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.Silver;
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.DodgerBlue;
             this.btnAdd.Location = new System.Drawing.Point(105, 390);
             this.btnAdd.Name = "btnAdd";
@@ -246,6 +246,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "editItemForm";
             this.Text = "addItemForm";
+            this.Load += new System.EventHandler(this.EditItemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).EndInit();

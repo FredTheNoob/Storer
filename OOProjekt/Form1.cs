@@ -159,7 +159,7 @@ namespace OOProjekt
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             refEditForm.Show();
-            //lvBoks.Items[lvBoks.SelectedItems[0].Index].SubItems[1].Text = "LuL";
+            
         }
 
         #endregion FormReferences
