@@ -107,7 +107,7 @@ namespace OOProjekt
                 }
 
             if (alreadyExists)
-                MessageBox.Show("Another product already has this PLU", "Warning PLU exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Another product already has this PLU", "Warning: PLU exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 refForm1.MainListView.Items.Add(lvItem);
 
