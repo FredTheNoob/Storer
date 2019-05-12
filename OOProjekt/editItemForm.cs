@@ -13,6 +13,8 @@ namespace OOProjekt
 {
     public partial class editItemForm : Form
     {
+        #warning: TODO: ADD COMMENTS
+
         Form1 refMainForm;
         ListViewItem.ListViewSubItem SelectedName;
         ListViewItem.ListViewSubItem SelectedAmount;
