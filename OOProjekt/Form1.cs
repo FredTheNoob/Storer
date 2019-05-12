@@ -231,7 +231,17 @@ namespace OOProjekt
         // When a key is pressed while inside the search textbox
         private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Search method code here
+            foreach (ListViewItem item in lvBoks.Items)
+            {
+
+                foreach (ListViewItem.ListViewSubItem subitem in item.SubItems)
+                {
+                    if (!subitem.Text.Contains(txtSearch.Text))
+                    {
+                        item.Remove();
+                    }
+                }
+            }
         }
     }
 }
