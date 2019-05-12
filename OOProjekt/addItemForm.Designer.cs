@@ -133,7 +133,7 @@
             this.lblAddItem.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItem.Location = new System.Drawing.Point(18, 43);
             this.lblAddItem.Name = "lblAddItem";
-            this.lblAddItem.Size = new System.Drawing.Size(313, 29);
+            this.lblAddItem.Size = new System.Drawing.Size(291, 29);
             this.lblAddItem.TabIndex = 31;
             this.lblAddItem.Text = "Add an item to your stock";
             // 
@@ -245,7 +245,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addItemForm";
-            this.Text = "addItemForm";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).EndInit();

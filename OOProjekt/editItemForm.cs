@@ -13,6 +13,8 @@ namespace OOProjekt
 {
     public partial class editItemForm : Form
     {
+        #warning: TODO: ADD COMMENTS
+
         Form1 refMainForm;
         ListViewItem.ListViewSubItem SelectedName;
         ListViewItem.ListViewSubItem SelectedAmount;
@@ -128,12 +130,13 @@ namespace OOProjekt
         private void EditItemForm_Load(object sender, EventArgs e)
         {
             #region Defining Listview subitems
-            ListViewItem.ListViewSubItem SelectedName = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[0];
-            ListViewItem.ListViewSubItem SelectedAmount = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[1];
-            ListViewItem.ListViewSubItem SelectedCategory = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[2];
-            ListViewItem.ListViewSubItem SelectedPrice = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[3];
-            ListViewItem.ListViewSubItem SelectedPLU = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[4];
+            SelectedName = refMainForm.MainListView.SelectedItems[0].SubItems[0];
+            SelectedAmount = refMainForm.MainListView.SelectedItems[0].SubItems[1];
+            SelectedCategory = refMainForm.MainListView.SelectedItems[0].SubItems[2];
+            SelectedPrice = refMainForm.MainListView.SelectedItems[0].SubItems[3];
+            SelectedPLU = refMainForm.MainListView.SelectedItems[0].SubItems[4];
             #endregion Defining Listview subitems
+
             txtName.Text = SelectedName.Text;
             nudAddItemAmount.Value = int.Parse(SelectedAmount.Text);
             cmbItemCategory.Text = SelectedCategory.Text;
