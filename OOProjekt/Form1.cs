@@ -233,14 +233,23 @@ namespace OOProjekt
         {
             foreach (ListViewItem item in lvBoks.Items)
             {
-
-                foreach (ListViewItem.ListViewSubItem subitem in item.SubItems)
+                if (item.Text.ToLower().StartsWith(txtSearch.Text.ToLower()))
                 {
-                    if (!subitem.Text.Contains(txtSearch.Text))
-                    {
-                        item.Remove();
-                    }
+                    item.Selected = true;
+                    item.BackColor = Color.DodgerBlue;
+                    item.ForeColor = Color.Black;
                 }
+                else
+                {
+                    item.Selected = false;
+                    item.BackColor = Color.White;
+                    item.ForeColor = Color.Black;
+                }
+            }
+
+            if (lvBoks.SelectedItems.Count == 1)
+            {
+                lvBoks.Focus();
             }
         }
     }
