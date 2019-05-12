@@ -13,10 +13,18 @@ namespace OOProjekt
 {
     public partial class editItemForm : Form
     {
-        Form1 refEditForm;
+        Form1 refMainForm;
+        ListViewItem.ListViewSubItem SelectedName;
+        ListViewItem.ListViewSubItem SelectedAmount;
+        ListViewItem.ListViewSubItem SelectedCategory;
+        ListViewItem.ListViewSubItem SelectedPrice;
+        ListViewItem.ListViewSubItem SelectedPLU;
+
+
+
         public editItemForm(Form1 Form1)
         {
-            refEditForm = Form1;
+            refMainForm = Form1;
             InitializeComponent();
         }
 
@@ -81,26 +89,12 @@ namespace OOProjekt
         // BtnAdd settings!
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
-            ListViewItem lvItem = new ListViewItem(txtName.Text);
-            // Creating a new item in our itemStock class
-            itemStock product = new itemStock();
-            // Move onto the subitem of the given data from the user given in the nudAddItemAmount and insert the value into the column of the listView (the amount column)
-            lvItem.SubItems.Add(nudAddItemAmount.Value.ToString());
-            product.Amount = (int)nudAddItemAmount.Value;
-            // If the category typed does NOT exist the a new category gets added
-            if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
-            {
-                cmbItemCategory.Items.Add(cmbItemCategory.Text);
-            }
-            // Move onto the subitem of the given data from the user given in the cmbItemCategory and insert the value/string into the column of the listView (the Category column)
-            lvItem.SubItems.Add(cmbItemCategory.Text);
-            // Move onto the subitem of the given data from the user given in the nudItemPrice and insert the value into the column of the listView (the Price column)
-            lvItem.SubItems.Add(nudItemPrice.Value.ToString());
-            // Same as above (--||--)
-            lvItem.SubItems.Add(nudItemPlu.Value.ToString());
-            // Add the items into the listview of the variable lvItem
-            refEditForm.MainListView.Items.Add(lvItem);
+            SelectedName.Text = txtName.Text;
+            SelectedAmount.Text = nudAddItemAmount.Value.ToString();
+            SelectedCategory.Text = cmbItemCategory.Text;
+            SelectedPrice.Text = nudItemPrice.Value.ToString();
+            SelectedPLU.Text = nudItemPlu.Value.ToString();
+            this.Hide();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -129,6 +123,23 @@ namespace OOProjekt
             cmbItemCategory.ResetText();
             nudItemPrice.ResetText();
             nudItemPlu.ResetText();
+        }
+
+        private void EditItemForm_Load(object sender, EventArgs e)
+        {
+            #region Defining Listview subitems
+            ListViewItem.ListViewSubItem SelectedName = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[0];
+            ListViewItem.ListViewSubItem SelectedAmount = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[1];
+            ListViewItem.ListViewSubItem SelectedCategory = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[2];
+            ListViewItem.ListViewSubItem SelectedPrice = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[3];
+            ListViewItem.ListViewSubItem SelectedPLU = refMainForm.MainListView.Items[refMainForm.MainListView.SelectedItems[0].Index].SubItems[4];
+            #endregion Defining Listview subitems
+            txtName.Text = SelectedName.Text;
+            nudAddItemAmount.Value = int.Parse(SelectedAmount.Text);
+            cmbItemCategory.Text = SelectedCategory.Text;
+            nudItemPlu.Value = int.Parse(SelectedPLU.Text);
+            nudItemPrice.Value = int.Parse(SelectedPrice.Text);
+
         }
     }
 }
