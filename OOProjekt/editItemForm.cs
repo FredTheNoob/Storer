@@ -39,10 +39,7 @@ namespace OOProjekt
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        //////////////////////
-        /// EVENTHANDLERS ///
-        ////////////////////
-
+  
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
             // Change the background color of the label to red
