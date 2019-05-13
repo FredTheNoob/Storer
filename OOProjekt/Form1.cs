@@ -24,6 +24,7 @@ namespace OOProjekt
 
         #region customUI
 
+        // Kald på et windows native så man kan flytte rundt på vinduet vha. topbaren
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [DllImportAttribute("user32.dll")]
@@ -36,43 +37,50 @@ namespace OOProjekt
         }
         private void BtnExit_Click(object sender, EventArgs e)
         {
+            // Hvis knappen exit er trykket på skal programmet lukkes
             Application.Exit();
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
         {
+            // Minimer vinduet når der trykkes på knappen
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
+            // Når musen kører over knappen skal farven ændres til rød
             btnExit.BackColor = Color.Red;
         }
 
         private void BtnMinimize_MouseEnter(object sender, EventArgs e)
         {
+            // Når musen køres over knappen ændres farven til DimGray
             btnMinimize.BackColor = Color.DimGray;
         }
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+            // Dette gør at vinduet kan flyttes rundt
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
         private void BtnExit_MouseLeave(object sender, EventArgs e)
         {
+            // Når musen køres væk fra exit-knappen skal farven laves tilbage til samme farve som topbaren
             btnExit.BackColor = pictureBox1.BackColor;
         }
 
         private void BtnMinimize_MouseLeave(object sender, EventArgs e)
         {
+            // Samme som ovenstående (--||--)
             btnMinimize.BackColor = pictureBox1.BackColor;
         }
 
         private void BtnNew_MouseEnter(object sender, EventArgs e)
         {
-            // Invert the colors by changing the background color to blue and text in the button to silver and the border on the button to silver
+            // Indsæt farverne ved at ændre baggrundsfarven til blå og teksten i knappen til sølv og kanten på knappen til sølv
             btnNew.BackColor = Color.DodgerBlue;
             btnNew.ForeColor = Color.Silver;
             btnNew.FlatAppearance.BorderColor = Color.Silver;
@@ -80,6 +88,7 @@ namespace OOProjekt
 
         private void BtnNew_MouseLeave(object sender, EventArgs e)
         {
+            // Inverter farverne tilbage til det som det var til at starte med
             btnNew.BackColor = Color.Silver;
             btnNew.FlatAppearance.BorderColor = Color.DodgerBlue;
             btnNew.ForeColor = Color.DodgerBlue;
