@@ -76,7 +76,7 @@
             this.btnExit.Location = new System.Drawing.Point(300, -3);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(22, 24);
+            this.btnExit.Size = new System.Drawing.Size(31, 24);
             this.btnExit.TabIndex = 13;
             this.btnExit.Text = "✖";
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -133,7 +133,7 @@
             this.lblAddItem.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItem.Location = new System.Drawing.Point(18, 43);
             this.lblAddItem.Name = "lblAddItem";
-            this.lblAddItem.Size = new System.Drawing.Size(313, 29);
+            this.lblAddItem.Size = new System.Drawing.Size(291, 29);
             this.lblAddItem.TabIndex = 31;
             this.lblAddItem.Text = "Add an item to your stock";
             // 
@@ -158,50 +158,50 @@
             // lblAddItemPlu
             // 
             this.lblAddItemPlu.AutoSize = true;
-            this.lblAddItemPlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemPlu.Location = new System.Drawing.Point(39, 354);
+            this.lblAddItemPlu.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemPlu.Location = new System.Drawing.Point(29, 355);
             this.lblAddItemPlu.Name = "lblAddItemPlu";
-            this.lblAddItemPlu.Size = new System.Drawing.Size(34, 16);
+            this.lblAddItemPlu.Size = new System.Drawing.Size(38, 19);
             this.lblAddItemPlu.TabIndex = 40;
             this.lblAddItemPlu.Text = "PLU";
             // 
             // lblAddItemPrice
             // 
             this.lblAddItemPrice.AutoSize = true;
-            this.lblAddItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemPrice.Location = new System.Drawing.Point(34, 297);
+            this.lblAddItemPrice.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemPrice.Location = new System.Drawing.Point(23, 294);
             this.lblAddItemPrice.Name = "lblAddItemPrice";
-            this.lblAddItemPrice.Size = new System.Drawing.Size(39, 16);
+            this.lblAddItemPrice.Size = new System.Drawing.Size(44, 19);
             this.lblAddItemPrice.TabIndex = 39;
             this.lblAddItemPrice.Text = "Price";
             // 
             // lblAddItemAmount
             // 
             this.lblAddItemAmount.AutoSize = true;
-            this.lblAddItemAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemAmount.Location = new System.Drawing.Point(20, 172);
+            this.lblAddItemAmount.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemAmount.Location = new System.Drawing.Point(9, 173);
             this.lblAddItemAmount.Name = "lblAddItemAmount";
-            this.lblAddItemAmount.Size = new System.Drawing.Size(53, 16);
+            this.lblAddItemAmount.Size = new System.Drawing.Size(65, 19);
             this.lblAddItemAmount.TabIndex = 38;
             this.lblAddItemAmount.Text = "Amount";
             // 
             // lblAddItemCategory
             // 
             this.lblAddItemCategory.AutoSize = true;
-            this.lblAddItemCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemCategory.Location = new System.Drawing.Point(10, 237);
+            this.lblAddItemCategory.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemCategory.Location = new System.Drawing.Point(2, 238);
             this.lblAddItemCategory.Name = "lblAddItemCategory";
-            this.lblAddItemCategory.Size = new System.Drawing.Size(63, 16);
+            this.lblAddItemCategory.Size = new System.Drawing.Size(72, 19);
             this.lblAddItemCategory.TabIndex = 37;
             this.lblAddItemCategory.Text = "Category";
             // 
             // lblAddItemName
             // 
             this.lblAddItemName.AutoSize = true;
-            this.lblAddItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItemName.Location = new System.Drawing.Point(28, 116);
+            this.lblAddItemName.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddItemName.Location = new System.Drawing.Point(16, 113);
             this.lblAddItemName.Name = "lblAddItemName";
-            this.lblAddItemName.Size = new System.Drawing.Size(45, 16);
+            this.lblAddItemName.Size = new System.Drawing.Size(51, 19);
             this.lblAddItemName.TabIndex = 36;
             this.lblAddItemName.Text = "Name";
             // 
@@ -245,7 +245,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addItemForm";
-            this.Text = "addItemForm";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).EndInit();

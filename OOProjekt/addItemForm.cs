@@ -95,23 +95,38 @@ namespace OOProjekt
             // Move onto the subitem of the given data from the user given in the nudItemPrice and insert the value into the column of the listView (the Price column)
             lvItem.SubItems.Add(nudItemPrice.Value.ToString());
             // Same as above (--||--)
-            lvItem.SubItems.Add(nudItemPlu.Value.ToString());
-            // Add the items into the listview of the variable lvItem
 
-            bool alreadyExists = false;
-            foreach (ListViewItem item in refForm1.MainListView.Items)
-                if (item.SubItems[4].Text == nudItemPlu.Value.ToString())
-                {
-                    alreadyExists = true;
-                    break;
-                }
-
-            if (alreadyExists)
-                MessageBox.Show("Another product already has this PLU", "Warning: PLU exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
+            // If the value in the numeric up down is 0
+            if (nudItemPlu.Value == 0)
+            {
+                // Add "No PLU" to the coloumn PLU
+                lvItem.SubItems.Add("No PLU");
+                // Refer to form1 and add the item into the listView
                 refForm1.MainListView.Items.Add(lvItem);
+            }
+            else
+            {
+                // Add the items into the listview of the variable lvItem
+                lvItem.SubItems.Add(nudItemPlu.Value.ToString());
 
+                bool alreadyExists = false;
 
+                // For each ListViewItem inside of the listView
+                foreach (ListViewItem item in refForm1.MainListView.Items)
+                    // if the subitems text in the fourth coloumn (PLU) is the same as the value of the numeric up down
+                    if (item.SubItems[4].Text == nudItemPlu.Value.ToString())
+                    {
+                        alreadyExists = true;
+                        break;
+                    }
+
+                // If the PLU has already been entered before
+                if (alreadyExists)
+                    MessageBox.Show("Another product already has this PLU", "Warning: PLU exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    // If not add the item
+                    refForm1.MainListView.Items.Add(lvItem);
+            }
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
