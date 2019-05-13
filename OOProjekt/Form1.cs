@@ -99,6 +99,7 @@ namespace OOProjekt
 
         private void BtnSell_MouseEnter(object sender, EventArgs e)
         {
+            // Det samme som ved BtnNew_MouseEnter eventet
             btnSell.BackColor = Color.DodgerBlue;
             btnSell.ForeColor = Color.Silver;
             btnSell.FlatAppearance.BorderColor = Color.Silver;
@@ -153,19 +154,24 @@ namespace OOProjekt
             btnRemove.ForeColor = Color.DodgerBlue;
         }
 
-        #endregion customUI
+        #endregion custom Brugerflade
 
+        // Når formen indlæser er det første der skal gøres være:
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Opret form2 og form3
             refItemForm = new addItemForm(this);
             refEditForm = new editItemForm(this);
+            // Definer hvilken variabel listViewet skal gemmes i (lvBoks)
             MainListView = lvBoks;
+            // Definer klassen itemStock.cs
             itemStockList = new List<itemStock>();
         }
 
-        #region ExternalFormVisability
+        #region EksternFormSynlighed
         private void BtnNew_Click(object sender, EventArgs e)
         {
+            // Hvis knappen trykkes på skal den indlæste form vises til brugeren
             refItemForm.Show();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
@@ -174,42 +180,42 @@ namespace OOProjekt
             
         }
 
-        #endregion FormReferences
+        #endregion EksternFormSynlighed
 
-        // Removes selected items if possible
+        // Fjerner valgte ting hvis muligt
         private void BtnRemove_Click(object sender, EventArgs e)
         {
-            // Make an int called selectCount and store the selected 
+            // Lav en int kaldet selectCount og gem de valgte ting fra listViewet
             int selectCount = lvBoks.SelectedItems.Count;
 
-            // If the user has not selected anything from the listView
+            // Hvis brugeren ikke har valgt noget fra listviewet
             if (selectCount == 0)
             {
-                // Prompts the user with a message, informing him that he needs to select an item, make a warning icon and an ok button on the messagebox too
+                // Viser brugeren en MessageBox som informerer personen om at brugeren skal vælge en ting - lav deruover et warning symbol og en ok-knap på messageboksen
                 MessageBox.Show("Please select an item from the list above", "No item selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (selectCount > 0)
             {
-                // Prompt the user with a message asking whether or not he wants to remove the selected items in the listView and set the icon of the messagebox to a infoicon
+                // Viser brugeren en MessageBox som spørger om personen har lyst til at fjerne de valgte ting fra listviewet og set ikonet af messageboksen til et infoikon
                 DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-                // If the user presses yes
+                // Hvis brugeren trykker ja
                 if (dialogResult == DialogResult.Yes)
                 {
-                    // If the user only has selected 1 item from the listView
+                    // Hvis brugeren kun har valgt en ting i listviewet
                     if (selectCount == 1)
                     {
-                        // Remove 1 item from the array selected in the listView
+                        // Fjern 1 valgt ting fra listviewet
                         lvBoks.SelectedItems[0].Remove();
                     }
-                    // If the user has selected more than 1 item
+                    // Hvis brugeren har valgt mere end en ting
                     else if (selectCount > 1)
                     {
-                        // Remove each item inside the listView
+                        // Fjern hver ting inde i listviewet
                         foreach (ListViewItem eachItem in lvBoks.SelectedItems)
                         {
-                            // Remove the selected items
+                            // Fjern de valgte ting
                             lvBoks.Items.Remove(eachItem);
                         }
                     }
@@ -223,10 +229,10 @@ namespace OOProjekt
 
         private void LvBoks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // If one item has been selected
+            // Hvis 1 ting er valgt
             if (lvBoks.SelectedItems.Count == 1)
             {
-                // Make the edit button clickable
+                // Så lav edit-knappen funktionel for brugeren
                 btnEdit.Enabled = true;
                 btnEdit.BackColor = Color.Silver;
                 btnEdit.FlatAppearance.BorderColor = Color.DodgerBlue;
@@ -234,13 +240,13 @@ namespace OOProjekt
             }
             else
             {
-                // Make the button unclickable
+                // Sikrer at brugeren ikke kan vælge flere ting på en gang, ved at gøre den ufunktionel
                 btnEdit.Enabled = false;
                 btnEdit.FlatAppearance.BorderColor = Color.DimGray;
             }
         }
 
-        // When a key is pressed while inside the search textbox
+        // Når der trykkes på en knap mens brugeren er inde i textboksen
         private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             foreach (ListViewItem item in lvBoks.Items)

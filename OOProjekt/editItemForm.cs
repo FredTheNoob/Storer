@@ -13,7 +13,6 @@ namespace OOProjekt
 {
     public partial class editItemForm : Form
     {
-        #warning: TODO: ADD COMMENTS
 
         Form1 refMainForm;
         ListViewItem.ListViewSubItem SelectedName;
@@ -30,7 +29,7 @@ namespace OOProjekt
             InitializeComponent();
         }
 
-        #region CustomUI
+        #region custom Brugerflade
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -42,7 +41,7 @@ namespace OOProjekt
   
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
-            // Change the background color of the label to red
+            // Ændrer baggrundsfarven på labellen til rød
             btnExit.BackColor = Color.Red;
         }
 
@@ -53,7 +52,7 @@ namespace OOProjekt
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            // Make the form able to be moved around by using natives
+            // Gør at formen kan flyttes rundt ved brug af natives
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
@@ -65,7 +64,7 @@ namespace OOProjekt
 
         private void BtnExit_MouseLeave(object sender, EventArgs e)
         {
-            // When the user moves the mouse from the exit button again the color will be changed to the same as the picturebox color
+            // Når brugeren bevæger musen væk fra knappen ændres farven tilbage til farven på topbaren
             btnExit.BackColor = pictureBox1.BackColor;
         }
 
@@ -83,9 +82,9 @@ namespace OOProjekt
             btnAdd.ForeColor = Color.DodgerBlue;
         }
 
-        #endregion CustomUI
+        #endregion custom Brugerflade
 
-        // BtnAdd settings!
+        // BtnAdd indstillinger
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             SelectedName.Text = txtName.Text;
@@ -98,23 +97,23 @@ namespace OOProjekt
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            // Hide the form temporarily
+            // Gem formen midlertidigt for brugeren
             this.Hide();
-            // Call the method called clear to clear/reset all the content/text from the form
+            // Kald på metoden kaldet clear for at fjerne alt indhold/tekst i formen
             clear();
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
         {
-            // Minimize the window
+            // Minimer vinduet
             this.WindowState = FormWindowState.Minimized;
         }
 
         ////////////////
-        /// METHODS ///
+        /// METODER ///
         //////////////
 
-        // Define a method to clear the content within the form
+        // Definer en metoden som fjerne alt indhold i formen
         private void clear()
         {
             txtName.Clear();
