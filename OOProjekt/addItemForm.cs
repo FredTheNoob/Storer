@@ -20,8 +20,8 @@ namespace OOProjekt
             InitializeComponent();
         }
 
-        // Here we are hiding all the custom UI code (this code just changes colors)
-        #region CustomUI
+        // Her skjuler vi alt selvlavet brugerflade i en region
+        #region custom Brugerflade
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -32,35 +32,38 @@ namespace OOProjekt
 
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
-            // Change the background color of the label to red
+            // Når musen kører over knappen skal farven ændres til rød
             btnExit.BackColor = Color.Red;
         }
 
         private void BtnMinimize_MouseEnter(object sender, EventArgs e)
         {
+            // Når musen køres over knappen ændres farven til DimGray
             btnMinimize.BackColor = Color.DimGray;
         }
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            // Make the form able to be moved around by using natives
+            // Dette gør at vinduet kan flyttes rundt
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
         private void BtnMinimize_MouseLeave(object sender, EventArgs e)
         {
+            // Samme som ovenstående (--||--)
             btnMinimize.BackColor = pictureBox1.BackColor;
         }
 
         private void BtnExit_MouseLeave(object sender, EventArgs e)
         {
-            // When the user moves the mouse from the exit button again the color will be changed to the same as the picturebox color
+            // Når musen køres væk fra exit-knappen skal farven laves tilbage til samme farve som topbaren
             btnExit.BackColor = pictureBox1.BackColor;
         }
 
         private void BtnAdd_MouseEnter(object sender, EventArgs e)
         {
+            // Indsæt farverne ved at ændre baggrundsfarven til blå og teksten i knappen til sølv og kanten på knappen til sølv
             btnAdd.BackColor = Color.DodgerBlue;
             btnAdd.ForeColor = Color.Silver;
             btnAdd.FlatAppearance.BorderColor = Color.Silver;
@@ -68,89 +71,92 @@ namespace OOProjekt
 
         private void BtnAdd_MouseLeave(object sender, EventArgs e)
         {
+            // Inverter farverne tilbage til det som det var til at starte med
             btnAdd.BackColor = Color.Silver;
             btnAdd.FlatAppearance.BorderColor = Color.DodgerBlue;
             btnAdd.ForeColor = Color.DodgerBlue;
         }
 
-        #endregion CustomUI
+        #endregion custom Brugerflade
 
-        // BtnAdd settings!
+        // BtnAdd indstillinger
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the listbox object called lvItem and insert the first item into column 0 called "apple" (the name column)
+            // Lav en ny instans af listboks objektet kaldet lvItem og sæt textboksen til denne kolonne
             ListViewItem lvItem = new ListViewItem(txtName.Text);
-            // Creating a new item in our itemStock class
+            // Opret en ny ting i vores itemStock klasse
             itemStock product = new itemStock();
-            // Move onto the subitem of the given data from the user given in the nudAddItemAmount and insert the value into the column of the listView (the amount column)
+            // Gå videre til subitemet af den givne data fra brugeren indtastet i nudAddItemAmount og insert denne værdi i den kolonne i listview kaldet "Amount"
             lvItem.SubItems.Add(nudAddItemAmount.Value.ToString());
             product.Amount = (int)nudAddItemAmount.Value;
-            // If the category typed does NOT exist the a new category gets added
+            // Hvis den indtastede kategori IKKE eksisterer så tilføj en ny kategori
             if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
             {
                 cmbItemCategory.Items.Add(cmbItemCategory.Text);
             }
-            // Move onto the subitem of the given data from the user given in the cmbItemCategory and insert the value/string into the column of the listView (the Category column)
+            // Gå videre til subitemet af den givne data fra brugeren indtastet i cmbItemCatekory og indsæt denne værdi/string i en kolonne i listview kaldet "Category"
             lvItem.SubItems.Add(cmbItemCategory.Text);
-            // Move onto the subitem of the given data from the user given in the nudItemPrice and insert the value into the column of the listView (the Price column)
+            // Det samme som ovenover bare med Price kolonnen
             lvItem.SubItems.Add(nudItemPrice.Value.ToString());
-            // Same as above (--||--)
+            // Det samme som ovenover (--||--)
 
-            // If the value in the numeric up down is 0
+            // Hvis værdien i vores numeric up down er 0
             if (nudItemPlu.Value == 0)
             {
-                // Add "No PLU" to the coloumn PLU
+                // Tilføj "No PLU" til kolonnen PLU
                 lvItem.SubItems.Add("No PLU");
-                // Refer to form1 and add the item into the listView
+                // Referer til form1 og tilføj tingen til listviewet
                 refForm1.MainListView.Items.Add(lvItem);
             }
             else
             {
-                // Add the items into the listview of the variable lvItem
+                // Tilføj tingene ind i listviewet af variablen defineret som lvItem
                 lvItem.SubItems.Add(nudItemPlu.Value.ToString());
 
+                // Lav en bool og sæt dens standardværdi til false
                 bool alreadyExists = false;
 
-                // For each ListViewItem inside of the listView
+                // For hvert ListViewItem inde i listviewet
                 foreach (ListViewItem item in refForm1.MainListView.Items)
-                    // if the subitems text in the fourth coloumn (PLU) is the same as the value of the numeric up down
+                    // Hvis teksten på subitemsene i 4. kolonne (PLU) er det samme som værdien af vores numeric up down
                     if (item.SubItems[4].Text == nudItemPlu.Value.ToString())
                     {
                         alreadyExists = true;
                         break;
                     }
 
-                // If the PLU has already been entered before
+                // Hvis PLU-værdien allerede er blevet indtastet før
                 if (alreadyExists)
                     MessageBox.Show("Another product already has this PLU", "Warning: PLU exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
-                    // If not add the item
+                    // Hvis ikke, tilføj tingen
                     refForm1.MainListView.Items.Add(lvItem);
             }
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            // Hide the form temporarily
+            // Gem formen midlertidigt for brugeren
             this.Hide();
-            // Call the method called clear to clear/reset all the content/text from the form
+            // Kald på metoden kaldes clearFields for at rydde/fjerne alt indhold i formen
             clearFields();
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
         {
-            // Minimize the window
+            // Minimer vinduet
             this.WindowState = FormWindowState.Minimized;
         }
 
         ////////////////
-        /// METHODS ///
+        /// METODER ///
         //////////////
 
-        // Define a method to clear the content within the form
+        // Definer en metoder som kan fjerne alt indhold i formen
         private void clearFields()
         {
             txtName.Clear();
+            // Sæt alle værdierne tilbage til standard
             nudAddItemAmount.Value = 0;
             cmbItemCategory.Text = "";
             nudItemPrice.Value = 0;
