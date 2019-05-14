@@ -28,7 +28,7 @@ namespace OOProjekt
         }
 
 
-        #region custom Brugerflade
+        #region customUI
 
         // Kald på et windows native så man kan flytte rundt på vinduet vha. topbaren
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -77,7 +77,7 @@ namespace OOProjekt
 
         private void BtnMinimize_MouseLeave(object sender, EventArgs e)
         {
-            // Samme som ovenstående (--||--)
+            // Samme som ovenstående bare for minimer knappen
             btnMinimize.BackColor = pictureBox1.BackColor;
         }
 
@@ -262,6 +262,17 @@ namespace OOProjekt
             if (lvBoks.SelectedItems.Count == 1)
             {
                 lvBoks.Focus();
+            }
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in MainListView.SelectedItems)
+            {
+                int CurrentAmount = int.Parse(item.SubItems[1].Text);
+                int NewAmount = CurrentAmount + (int)nudAddAmount.Value;
+                item.SubItems[1].Text = NewAmount.ToString();
+                itemStockList[item.Index].Amount = NewAmount;
             }
         }
     }

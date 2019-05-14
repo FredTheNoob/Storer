@@ -42,7 +42,7 @@
             this.lblAddItemAmount = new System.Windows.Forms.Label();
             this.lblAddItemCategory = new System.Windows.Forms.Label();
             this.lblAddItemName = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).BeginInit();
@@ -205,22 +205,22 @@
             this.lblAddItemName.TabIndex = 36;
             this.lblAddItemName.Text = "Name";
             // 
-            // btnAdd
+            // btnEdit
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Silver;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.Location = new System.Drawing.Point(105, 390);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 48);
-            this.btnAdd.TabIndex = 41;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
-            this.btnAdd.MouseEnter += new System.EventHandler(this.BtnAdd_MouseEnter);
-            this.btnAdd.MouseLeave += new System.EventHandler(this.BtnAdd_MouseLeave);
+            this.btnEdit.BackColor = System.Drawing.Color.Silver;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnEdit.Location = new System.Drawing.Point(105, 390);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(116, 48);
+            this.btnEdit.TabIndex = 41;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            this.btnEdit.MouseEnter += new System.EventHandler(this.BtnEdit_MouseEnter);
+            this.btnEdit.MouseLeave += new System.EventHandler(this.BtnEdit_MouseLeave);
             // 
             // editItemForm
             // 
@@ -228,7 +228,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(330, 450);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblAddItemPlu);
             this.Controls.Add(this.lblAddItemPrice);
             this.Controls.Add(this.lblAddItemAmount);
@@ -272,6 +272,6 @@
         private System.Windows.Forms.Label lblAddItemAmount;
         private System.Windows.Forms.Label lblAddItemCategory;
         private System.Windows.Forms.Label lblAddItemName;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

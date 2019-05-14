@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OOProjekt
 {
@@ -35,6 +36,19 @@ namespace OOProjekt
         public float GetValue()
         {
             return Price * Amount;
+        }
+        public void ToListView(ListView _listView)
+        {
+            ListViewItem listViewItemGUI = new ListViewItem(this.Name);
+            listViewItemGUI.SubItems.Add(this.Amount.ToString());
+            listViewItemGUI.SubItems.Add(this.Category);
+            listViewItemGUI.SubItems.Add(this.Price.ToString());
+            if (this.PLU != 0)
+                listViewItemGUI.SubItems.Add(this.PLU.ToString());
+            else
+                listViewItemGUI.SubItems.Add("No PLU");
+
+            _listView.Items.Add(listViewItemGUI);
         }
     }
 }

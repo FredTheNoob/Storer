@@ -69,24 +69,24 @@ namespace OOProjekt
             btnExit.BackColor = pictureBox1.BackColor;
         }
 
-        private void BtnAdd_MouseEnter(object sender, EventArgs e)
+        private void BtnEdit_MouseEnter(object sender, EventArgs e)
         {
-            btnAdd.BackColor = Color.DodgerBlue;
-            btnAdd.ForeColor = Color.Silver;
-            btnAdd.FlatAppearance.BorderColor = Color.Silver;
+            btnEdit.BackColor = Color.DodgerBlue;
+            btnEdit.ForeColor = Color.Silver;
+            btnEdit.FlatAppearance.BorderColor = Color.Silver;
         }
 
-        private void BtnAdd_MouseLeave(object sender, EventArgs e)
+        private void BtnEdit_MouseLeave(object sender, EventArgs e)
         {
-            btnAdd.BackColor = Color.Silver;
-            btnAdd.FlatAppearance.BorderColor = Color.DodgerBlue;
-            btnAdd.ForeColor = Color.DodgerBlue;
+            btnEdit.BackColor = Color.Silver;
+            btnEdit.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnEdit.ForeColor = Color.DodgerBlue;
         }
 
         #endregion CustomUI
 
-        // BtnAdd settings!
-        private void BtnAdd_Click(object sender, EventArgs e)
+        // BtnEdit settings!
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             SelectedName.Text = txtName.Text;
             SelectedAmount.Text = nudAddItemAmount.Value.ToString();
@@ -141,5 +141,6 @@ namespace OOProjekt
             nudItemPrice.Value = int.Parse(SelectedPrice.Text);
 
         }
+
     }
 }
