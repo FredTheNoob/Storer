@@ -14,7 +14,6 @@ namespace OOProjekt
     public partial class addItemForm : Form
     {
         Form1 refForm1;
-        public List<itemStock> itemStockList = new List<itemStock>();
         public addItemForm(Form1 Form1)
         {
             refForm1 = Form1;
@@ -101,19 +100,18 @@ namespace OOProjekt
             if (product.PLUexists(refForm1.MainListView))
                 // Hvis en MessageBox som informerer brugeren om, at PLU nummeret allerede findes i listViewet. Lav et warning ikon og en ok knap
                 MessageBox.Show("Another product with this PLU already exist", "PLU Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             // Hvis PLU-nummeret ikke er det samme som det der står i listViewet
             else
+            {
                 // Få product til at tilføje alle brugerens givne værdier i listViewet på form1
                 product.AddToListView(refForm1.MainListView);
-
+                refForm1.itemStockList.Add(product);
+            }
 
             // Hvis den indtastede kategori IKKE eksisterer så tilføj en ny kategori
             if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
-            {
                 cmbItemCategory.Items.Add(cmbItemCategory.Text);
-            }
-            itemStockList.Add(product);
-
         }
 
         private void BtnExit_Click(object sender, EventArgs e)

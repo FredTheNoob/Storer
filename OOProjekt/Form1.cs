@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace OOProjekt
 {
@@ -15,9 +17,11 @@ namespace OOProjekt
     {
         addItemForm refItemForm;
         editItemForm refEditForm;
-        // Make a public accessible ListView
+        // Lav et offentligt tilgængeligt listView
         public ListView MainListView;
         public List<itemStock> itemStockList;
+        // Lav en string kaldet saveFilePath som finder stien af filen og tilføj et filnavn og typen json
+        string saveFilePath = Path.GetDirectoryName(Application.ExecutablePath) + "\\save.json";
 
         public Form1()
         {
@@ -151,6 +155,20 @@ namespace OOProjekt
             btnRemove.ForeColor = Color.DodgerBlue;
         }
 
+        private void BtnSave_MouseEnter(object sender, EventArgs e)
+        {
+            btnSave.BackColor = Color.DodgerBlue;
+            btnSave.ForeColor = Color.Silver;
+            btnSave.FlatAppearance.BorderColor = Color.Silver;
+        }
+
+        private void BtnSave_MouseLeave(object sender, EventArgs e)
+        {
+            btnSave.BackColor = Color.Silver;
+            btnSave.ForeColor = Color.DodgerBlue;
+            btnSave.FlatAppearance.BorderColor = Color.DodgerBlue;
+        }
+
         #endregion custom Brugerflade
 
         // Når formen indlæser er det første der skal gøres være:
@@ -163,6 +181,9 @@ namespace OOProjekt
             MainListView = lvBoks;
             // Definer klassen itemStock.cs
             itemStockList = new List<itemStock>();
+            // Kald på de definerede metoder
+            loadUserData();
+            reloadListView();
         }
 
         #region EksternFormSynlighed
@@ -174,7 +195,6 @@ namespace OOProjekt
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             refEditForm.Show();
-            
         }
 
         #endregion EksternFormSynlighed
@@ -183,7 +203,7 @@ namespace OOProjekt
         private void BtnRemove_Click(object sender, EventArgs e)
         {
             // Lav en int kaldet selectCount og gem de valgte ting fra listViewet
-            int selectCount = lvBoks.SelectedItems.Count;
+            int selectCount = MainListView.SelectedItems.Count;
 
             // Hvis brugeren ikke har valgt noget fra listviewet
             if (selectCount == 0)
@@ -194,28 +214,21 @@ namespace OOProjekt
 
             if (selectCount > 0)
             {
-                // Viser brugeren en MessageBox som spørger om personen har lyst til at fjerne de valgte ting fra listviewet og set ikonet af messageboksen til et infoikon
+                // Viser brugeren en MessageBox som spørger om personen har lyst til at fjerne de valgte ting fra listviewet og sæt ikonet af messageboksen til et infoikon
                 DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 // Hvis brugeren trykker ja
                 if (dialogResult == DialogResult.Yes)
                 {
-                    // Hvis brugeren kun har valgt en ting i listviewet
-                    if (selectCount == 1)
+                    // Fjern hver ting inde i listviewet
+                    foreach (ListViewItem eachItem in lvBoks.SelectedItems)
                     {
-                        // Fjern 1 valgt ting fra listviewet
-                        lvBoks.SelectedItems[0].Remove();
+                        // Fjern de valgte ting
+                        //MainListView.Items.Remove(eachItem);
+                        itemStockList.Remove(itemStockList[eachItem.Index]);
                     }
-                    // Hvis brugeren har valgt mere end en ting
-                    else if (selectCount > 1)
-                    {
-                        // Fjern hver ting inde i listviewet
-                        foreach (ListViewItem eachItem in lvBoks.SelectedItems)
-                        {
-                            // Fjern de valgte ting
-                            lvBoks.Items.Remove(eachItem);
-                        }
-                    }
+
+                    reloadListView();
                 }
             }
         }
@@ -243,11 +256,11 @@ namespace OOProjekt
             }
         }
 
-        // Når der trykkes på en knap mens brugeren er inde i textboksen
+        // Når der trykkes på en knap mens brugeren er inde i tekstboksen
         private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Filter the text
-            
+
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -260,5 +273,78 @@ namespace OOProjekt
                 itemStockList[item.Index].Amount = NewAmount;
             }
         }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            // Kald på metoden saveUserData her
+            saveUserData();
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            saveUserData();
+        }
+
+        ////////////////
+        /// METODER ///
+        //////////////
+
+        private void saveUserData()
+        {
+            // Her omformer vi listViewet til en json kompatibel string af vores itemStockList som defineret i klassen
+            string json = JsonConvert.SerializeObject(itemStockList, Formatting.Indented);
+
+            // Hvis filen eksisterer
+            if (File.Exists(saveFilePath))
+            {
+                // Slet filen
+                File.Delete(saveFilePath);
+            }
+
+            // Ved at bruge system.IO lav en variabel kaldet saveWriter og sæt dens værdi til stringen filePath
+            StreamWriter saveWriter = new StreamWriter(saveFilePath);
+
+            // Her skrives der hvad filen skal indeholde
+            saveWriter.Write(json);
+
+            // Luk filadgangen så andre programmer kan bruge filen
+            saveWriter.Close();
+        }
+
+        private void loadUserData()
+        {
+            // Forsøg at gøre følgende:
+            try
+            {
+                // Lav en streamReader som indlæser den gemte fil (save.json) 
+                System.IO.StreamReader fileReader = new System.IO.StreamReader(saveFilePath);
+
+                // Sikrer at filen bliver læst til slut og gem dette til stringen json
+                string json = fileReader.ReadToEnd();
+
+                // Brug json metoder til at indlæse den gemte fil til vores liste
+                itemStockList = JsonConvert.DeserializeObject<List<itemStock>>(json);
+            }
+            // Hvis der opstår en fejl
+            catch (Exception)
+            {
+                // Informér brugeren om, at der skete en fejl ved indlæsningen af filen
+                MessageBox.Show("Error loading saved data: Either you do not have any saved data or it is corrupt", "Error loading", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void reloadListView()
+        {
+            // Fjern alle varerne inde i listViewet
+            MainListView.Items.Clear();
+
+            // For hvert itemStock i vores itemStockList
+            foreach (itemStock item in itemStockList)
+            {
+                // Tilføj 
+                item.AddToListView(MainListView);
+            }
+        }
+
+        
     }
 }
