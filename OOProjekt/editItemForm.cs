@@ -87,6 +87,7 @@ namespace OOProjekt
         // BtnAdd indstillinger
         private void BtnEdit_Click(object sender, EventArgs e)
         {
+            
             SelectedName.Text = txtName.Text;
             SelectedAmount.Text = nudAddItemAmount.Value.ToString();
             SelectedCategory.Text = cmbItemCategory.Text;

@@ -14,6 +14,7 @@ namespace OOProjekt
     public partial class addItemForm : Form
     {
         Form1 refForm1;
+        public List<itemStock> itemStockList = new List<itemStock>();
         public addItemForm(Form1 Form1)
         {
             refForm1 = Form1;
@@ -107,6 +108,7 @@ namespace OOProjekt
             {
                 cmbItemCategory.Items.Add(cmbItemCategory.Text);
             }
+            itemStockList.Add(product);
 
         }
 
