@@ -82,6 +82,7 @@ namespace OOProjekt
             ListViewItem lvItem = new ListViewItem(txtName.Text);
             // Creating a new item in our itemStock class
             itemStock product = new itemStock();
+            product.Name = txtName.Text;
             // Move onto the subitem of the given data from the user given in the nudAddItemAmount and insert the value into the column of the listView (the amount column)
             lvItem.SubItems.Add(nudAddItemAmount.Value.ToString());
             product.Amount = (int)nudAddItemAmount.Value;
@@ -92,8 +93,10 @@ namespace OOProjekt
             }
             // Move onto the subitem of the given data from the user given in the cmbItemCategory and insert the value/string into the column of the listView (the Category column)
             lvItem.SubItems.Add(cmbItemCategory.Text);
+            product.Category = cmbItemCategory.Text;
             // Move onto the subitem of the given data from the user given in the nudItemPrice and insert the value into the column of the listView (the Price column)
             lvItem.SubItems.Add(nudItemPrice.Value.ToString());
+            product.Price = (float)nudItemPrice.Value;
             // Same as above (--||--)
 
             // If the value in the numeric up down is 0
@@ -103,6 +106,8 @@ namespace OOProjekt
                 lvItem.SubItems.Add("No PLU");
                 // Refer to form1 and add the item into the listView
                 refForm1.MainListView.Items.Add(lvItem);
+                product.ID = refForm1.MainListView.Items.Count;
+                refForm1.itemStockList.Add(product);
             }
             else
             {
@@ -122,10 +127,15 @@ namespace OOProjekt
 
                 // If the PLU has already been entered before
                 if (alreadyExists)
+                {
                     MessageBox.Show("Another product already has this PLU", "Warning: PLU exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 else
+                {
                     // If not add the item
                     refForm1.MainListView.Items.Add(lvItem);
+                    product.ID = refForm1.MainListView.Items.Count;
+                }  
             }
         }
 

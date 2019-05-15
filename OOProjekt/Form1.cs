@@ -228,29 +228,10 @@ namespace OOProjekt
             }
         }
 
-        // When a key is pressed while inside the search textbox
-        private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in lvBoks.Items)
-            {
-                if (item.Text.ToLower().StartsWith(txtSearch.Text.ToLower()))
-                {
-                    item.Selected = true;
-                    item.BackColor = Color.DodgerBlue;
-                    item.ForeColor = Color.Black;
-                }
-                else
-                {
-                    item.Selected = false;
-                    item.BackColor = Color.White;
-                    item.ForeColor = Color.Black;
-                }
-            }
-
-            if (lvBoks.SelectedItems.Count == 1)
-            {
-                lvBoks.Focus();
-            }
+            // Filter the text
+            
         }
     }
 }
