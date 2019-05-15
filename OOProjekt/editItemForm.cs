@@ -14,15 +14,6 @@ namespace OOProjekt
     public partial class editItemForm : Form
     {
         Form1 refMainForm;
-        // Define that these variables are part of subitems in the listView
-        ListViewItem.ListViewSubItem SelectedName;
-        ListViewItem.ListViewSubItem SelectedAmount;
-        ListViewItem.ListViewSubItem SelectedCategory;
-        ListViewItem.ListViewSubItem SelectedPrice;
-        ListViewItem.ListViewSubItem SelectedPLU;
-
-
-
         public editItemForm(Form1 Form1)
         {
             refMainForm = Form1;
@@ -92,7 +83,7 @@ namespace OOProjekt
         // BtnAdd indstillinger
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            
+#warning fixMe
             SelectedName.Text = txtName.Text;
             SelectedAmount.Text = nudAddItemAmount.Value.ToString();
             SelectedCategory.Text = cmbItemCategory.Text;
@@ -121,17 +112,7 @@ namespace OOProjekt
 
         private void EditItemForm_Load(object sender, EventArgs e)
         {
-            #region Defining Listview subitems
-            // Take the selected subitem in the 1st coloumn (name) and put it into a variable called SelectedName
-            SelectedName = refMainForm.MainListView.SelectedItems[0].SubItems[0];
-            // Same as above (--||--)
-            SelectedAmount = refMainForm.MainListView.SelectedItems[0].SubItems[1];
-            // C# starts counting from 0, therefore this coloumn will be coloumn number 3 (category)
-            SelectedCategory = refMainForm.MainListView.SelectedItems[0].SubItems[2];
-            SelectedPrice = refMainForm.MainListView.SelectedItems[0].SubItems[3];
-            SelectedPLU = refMainForm.MainListView.SelectedItems[0].SubItems[4];
-            #endregion Defining Listview subitems
-
+#warning fixBlyat
             // Get the contents from the selected added subitem and insert its text value into the forms textbox called txtName
             txtName.Text = SelectedName.Text;
             // Get the numeric up downs value and parse its value into a text property for the SelectedAmount to use
