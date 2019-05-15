@@ -99,7 +99,7 @@ namespace OOProjekt
             // Referer til vores itemstock klasse og find PLUexists - dette er en bool som enten er sand eller falsk. Tjek herefter om PLU nummeret brugeren har skrevet eksisterer i listViewet i forvejen. Hvis ja
             if (product.PLUexists(refForm1.MainListView))
                 // Hvis en MessageBox som informerer brugeren om, at PLU nummeret allerede findes i listViewet. Lav et warning ikon og en ok knap
-                MessageBox.Show("Another product with this PLU already exists", "PLU Exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Another product with this PLU already exist", "PLU Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             // Hvis PLU-nummeret ikke er det samme som det der står i listViewet
             else
                 // Få product til at tilføje alle brugerens givne værdier i listViewet på form1

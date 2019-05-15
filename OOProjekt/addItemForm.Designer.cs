@@ -43,10 +43,16 @@
             this.lblAddItemCategory = new System.Windows.Forms.Label();
             this.lblAddItemName = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMinimize
@@ -89,7 +95,7 @@
             this.cmbItemCategory.Location = new System.Drawing.Point(74, 236);
             this.cmbItemCategory.Name = "cmbItemCategory";
             this.cmbItemCategory.Size = new System.Drawing.Size(187, 21);
-            this.cmbItemCategory.TabIndex = 35;
+            this.cmbItemCategory.TabIndex = 32;
             // 
             // nudItemPlu
             // 
@@ -125,7 +131,7 @@
             0});
             this.nudAddItemAmount.Name = "nudAddItemAmount";
             this.nudAddItemAmount.Size = new System.Drawing.Size(120, 20);
-            this.nudAddItemAmount.TabIndex = 32;
+            this.nudAddItemAmount.TabIndex = 31;
             // 
             // lblAddItem
             // 
@@ -161,7 +167,7 @@
             this.lblAddItemPlu.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemPlu.Location = new System.Drawing.Point(29, 355);
             this.lblAddItemPlu.Name = "lblAddItemPlu";
-            this.lblAddItemPlu.Size = new System.Drawing.Size(38, 19);
+            this.lblAddItemPlu.Size = new System.Drawing.Size(39, 19);
             this.lblAddItemPlu.TabIndex = 40;
             this.lblAddItemPlu.Text = "PLU";
             // 
@@ -171,7 +177,7 @@
             this.lblAddItemPrice.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemPrice.Location = new System.Drawing.Point(23, 294);
             this.lblAddItemPrice.Name = "lblAddItemPrice";
-            this.lblAddItemPrice.Size = new System.Drawing.Size(44, 19);
+            this.lblAddItemPrice.Size = new System.Drawing.Size(46, 19);
             this.lblAddItemPrice.TabIndex = 39;
             this.lblAddItemPrice.Text = "Price";
             // 
@@ -181,7 +187,7 @@
             this.lblAddItemAmount.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemAmount.Location = new System.Drawing.Point(9, 173);
             this.lblAddItemAmount.Name = "lblAddItemAmount";
-            this.lblAddItemAmount.Size = new System.Drawing.Size(65, 19);
+            this.lblAddItemAmount.Size = new System.Drawing.Size(66, 19);
             this.lblAddItemAmount.TabIndex = 38;
             this.lblAddItemAmount.Text = "Amount";
             // 
@@ -191,7 +197,7 @@
             this.lblAddItemCategory.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemCategory.Location = new System.Drawing.Point(2, 238);
             this.lblAddItemCategory.Name = "lblAddItemCategory";
-            this.lblAddItemCategory.Size = new System.Drawing.Size(72, 19);
+            this.lblAddItemCategory.Size = new System.Drawing.Size(74, 19);
             this.lblAddItemCategory.TabIndex = 37;
             this.lblAddItemCategory.Text = "Category";
             // 
@@ -201,7 +207,7 @@
             this.lblAddItemName.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemName.Location = new System.Drawing.Point(16, 113);
             this.lblAddItemName.Name = "lblAddItemName";
-            this.lblAddItemName.Size = new System.Drawing.Size(51, 19);
+            this.lblAddItemName.Size = new System.Drawing.Size(52, 19);
             this.lblAddItemName.TabIndex = 36;
             this.lblAddItemName.Text = "Name";
             // 
@@ -222,12 +228,45 @@
             this.btnAdd.MouseEnter += new System.EventHandler(this.BtnAdd_MouseEnter);
             this.btnAdd.MouseLeave += new System.EventHandler(this.BtnAdd_MouseLeave);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 448);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(330, 2);
+            this.pictureBox4.TabIndex = 45;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox2.Location = new System.Drawing.Point(328, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(2, 450);
+            this.pictureBox2.TabIndex = 46;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(2, 450);
+            this.pictureBox3.TabIndex = 47;
+            this.pictureBox3.TabStop = false;
+            // 
             // addItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(330, 450);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblAddItemPlu);
             this.Controls.Add(this.lblAddItemPrice);
@@ -250,6 +289,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +314,8 @@
         private System.Windows.Forms.Label lblAddItemCategory;
         private System.Windows.Forms.Label lblAddItemName;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

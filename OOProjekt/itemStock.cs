@@ -16,8 +16,10 @@ namespace OOProjekt
         public int Amount { get; set; }
         public int ID { get; set; }
 
+        // Lav en metode med midlertidige navne, når kaldt
         public void Setup(string _Name, int _PLU, string _Category, float _Price, int _Amount, int _ID)
         {
+            // Sæt ovenstående variabler til de midlertidige
             Name = _Name;
             PLU = _PLU;
             Category = _Category;
@@ -27,6 +29,7 @@ namespace OOProjekt
         }
         public void Sell(int _amount)
         {
+            // Når metoden kaldes: Tag kolonnen amount of fjern 1
             Amount -= _amount;
         }
         public void Add(int _amount)

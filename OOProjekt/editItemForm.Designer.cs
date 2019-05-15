@@ -43,10 +43,16 @@
             this.lblAddItemCategory = new System.Windows.Forms.Label();
             this.lblAddItemName = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMinimize
@@ -89,7 +95,7 @@
             this.cmbItemCategory.Location = new System.Drawing.Point(74, 236);
             this.cmbItemCategory.Name = "cmbItemCategory";
             this.cmbItemCategory.Size = new System.Drawing.Size(187, 21);
-            this.cmbItemCategory.TabIndex = 35;
+            this.cmbItemCategory.TabIndex = 32;
             // 
             // nudItemPlu
             // 
@@ -125,7 +131,7 @@
             0});
             this.nudAddItemAmount.Name = "nudAddItemAmount";
             this.nudAddItemAmount.Size = new System.Drawing.Size(120, 20);
-            this.nudAddItemAmount.TabIndex = 32;
+            this.nudAddItemAmount.TabIndex = 31;
             // 
             // lblEditItem
             // 
@@ -222,12 +228,45 @@
             this.btnEdit.MouseEnter += new System.EventHandler(this.BtnEdit_MouseEnter);
             this.btnEdit.MouseLeave += new System.EventHandler(this.BtnEdit_MouseLeave);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox2.Location = new System.Drawing.Point(328, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(2, 450);
+            this.pictureBox2.TabIndex = 42;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(2, 450);
+            this.pictureBox3.TabIndex = 43;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox4.Location = new System.Drawing.Point(2, 448);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(330, 2);
+            this.pictureBox4.TabIndex = 44;
+            this.pictureBox4.TabStop = false;
+            // 
             // editItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(330, 450);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblAddItemPlu);
             this.Controls.Add(this.lblAddItemPrice);
@@ -251,6 +290,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,5 +315,8 @@
         private System.Windows.Forms.Label lblAddItemCategory;
         private System.Windows.Forms.Label lblAddItemName;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
