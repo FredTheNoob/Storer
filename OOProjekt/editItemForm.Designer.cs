@@ -137,7 +137,7 @@
             // 
             this.lblEditItem.AutoSize = true;
             this.lblEditItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditItem.Location = new System.Drawing.Point(18, 43);
+            this.lblEditItem.Location = new System.Drawing.Point(14, 42);
             this.lblEditItem.Name = "lblEditItem";
             this.lblEditItem.Size = new System.Drawing.Size(304, 29);
             this.lblEditItem.TabIndex = 31;
@@ -265,8 +265,6 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(330, 450);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblAddItemPlu);
             this.Controls.Add(this.lblAddItemPrice);
@@ -282,6 +280,8 @@
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "editItemForm";
             this.Text = "addItemForm";
