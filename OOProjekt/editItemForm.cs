@@ -97,13 +97,6 @@ namespace OOProjekt
             SelectedAmount.Text = nudAddItemAmount.Value.ToString();
             SelectedCategory.Text = cmbItemCategory.Text;
             SelectedPrice.Text = nudItemPrice.Value.ToString();
-
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            // Gem formen midlertidigt for brugeren
-            this.Hide();
-            // Kald på metoden kaldet clear for at fjerne alt indhold/tekst i formen
-            clear();
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
