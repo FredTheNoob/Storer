@@ -39,6 +39,7 @@ namespace OOProjekt
         }
         public void AddToListView(ListView _listView)
         {
+            #warning missing comments
             // Lav en ny instans af listboks objektet kaldet lvItem og sæt textboksen til denne kolonne
             ListViewItem listViewItemGUI = new ListViewItem(this.Name);
             // Gå videre til subitemet af den givne data fra brugeren indtastet i nudAddItemAmount og insert denne værdi i den kolonne i listview kaldet "Amount"
@@ -60,6 +61,7 @@ namespace OOProjekt
 
         public bool PLUexists(ListView _listView)
         {
+            #warning missing comments
             string StringPLU = this.PLU.ToString();
             foreach (ListViewItem item in _listView.Items)
             {

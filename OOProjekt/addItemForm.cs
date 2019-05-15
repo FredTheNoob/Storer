@@ -82,6 +82,7 @@ namespace OOProjekt
         // BtnAdd indstillinger
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            #warning missing comments
             // Opret en ny ting i vores itemStock klasse
             itemStock product = new itemStock();
 
