@@ -29,7 +29,7 @@ namespace OOProjekt
             InitializeComponent();
         }
 
-        #region CustomUI
+        #region custom Brugerflade
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -38,13 +38,10 @@ namespace OOProjekt
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        //////////////////////
-        /// EVENTHANDLERS ///
-        ////////////////////
-
+  
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
-            // Change the background color of the label to red
+            // Ændrer baggrundsfarven på labellen til rød
             btnExit.BackColor = Color.Red;
         }
 
@@ -55,7 +52,7 @@ namespace OOProjekt
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            // Make the form able to be moved around by using natives
+            // Gør at formen kan flyttes rundt ved brug af natives
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
@@ -67,22 +64,22 @@ namespace OOProjekt
 
         private void BtnExit_MouseLeave(object sender, EventArgs e)
         {
-            // When the user moves the mouse from the exit button again the color will be changed to the same as the picturebox color
+            // Når brugeren bevæger musen væk fra knappen ændres farven tilbage til farven på topbaren
             btnExit.BackColor = pictureBox1.BackColor;
         }
 
-        private void BtnAdd_MouseEnter(object sender, EventArgs e)
+        private void BtnEdit_MouseEnter(object sender, EventArgs e)
         {
-            btnAdd.BackColor = Color.DodgerBlue;
-            btnAdd.ForeColor = Color.Silver;
-            btnAdd.FlatAppearance.BorderColor = Color.Silver;
+            btnEdit.BackColor = Color.DodgerBlue;
+            btnEdit.ForeColor = Color.Silver;
+            btnEdit.FlatAppearance.BorderColor = Color.Silver;
         }
 
-        private void BtnAdd_MouseLeave(object sender, EventArgs e)
+        private void BtnEdit_MouseLeave(object sender, EventArgs e)
         {
-            btnAdd.BackColor = Color.Silver;
-            btnAdd.FlatAppearance.BorderColor = Color.DodgerBlue;
-            btnAdd.ForeColor = Color.DodgerBlue;
+            btnEdit.BackColor = Color.Silver;
+            btnEdit.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnEdit.ForeColor = Color.DodgerBlue;
         }
         private void BtnExit_Click(object sender, EventArgs e)
         {
@@ -90,37 +87,43 @@ namespace OOProjekt
             this.Hide();
         }
 
-        private void BtnMinimize_Click(object sender, EventArgs e)
-        {
-            // Minimize the window
-            this.WindowState = FormWindowState.Minimized;
-        }
+        #endregion custom Brugerflade
 
-        #endregion CustomUI
-
-        // BtnAdd settings!
-        private void BtnAdd_Click(object sender, EventArgs e)
+        // BtnAdd indstillinger
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
-            // Update the newly typed text that the user typed into the listView (using the variables defined underneath)
+            
             SelectedName.Text = txtName.Text;
             SelectedAmount.Text = nudAddItemAmount.Value.ToString();
             SelectedCategory.Text = cmbItemCategory.Text;
             SelectedPrice.Text = nudItemPrice.Value.ToString();
 
-            // If the numeric up down with PLU is untouched or stock 0
-            if (nudItemPlu.Value == 0)
-            {
-                // Insert the text ("No PLU") in the listView instead of 0
-                SelectedPLU.Text = "No PLU";
-            }
-            // If not
-            else
-            {
-                SelectedPLU.Text = nudItemPlu.Value.ToString();
-            }
-            
-            // Lastly, hide the form from the user so that he doesn't need to click the exit button first
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            // Gem formen midlertidigt for brugeren
             this.Hide();
+            // Kald på metoden kaldet clear for at fjerne alt indhold/tekst i formen
+            clear();
+        }
+
+        private void BtnMinimize_Click(object sender, EventArgs e)
+        {
+            // Minimer vinduet
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        ////////////////
+        /// METODER ///
+        //////////////
+
+        // Definer en metoden som fjerne alt indhold i formen
+        private void clear()
+        {
+            txtName.Clear();
+            nudAddItemAmount.ResetText();
+            cmbItemCategory.ResetText();
+            nudItemPrice.ResetText();
+            nudItemPlu.ResetText();
         }
 
         private void EditItemForm_Load(object sender, EventArgs e)
@@ -150,5 +153,6 @@ namespace OOProjekt
                 nudItemPlu.Value = int.Parse(SelectedPLU.Text);
             }   
         }
+
     }
 }
