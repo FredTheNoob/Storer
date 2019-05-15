@@ -16,8 +16,10 @@ namespace OOProjekt
         public int Amount { get; set; }
         public int ID { get; set; }
 
+        // Lav en metode med midlertidige navne, når kaldt
         public void Setup(string _Name, int _PLU, string _Category, float _Price, int _Amount, int _ID)
         {
+            // Sæt ovenstående variabler til de midlertidige
             Name = _Name;
             PLU = _PLU;
             Category = _Category;
@@ -27,6 +29,7 @@ namespace OOProjekt
         }
         public void Sell(int _amount)
         {
+            // Når metoden kaldes: Tag kolonnen amount of fjern 1
             Amount -= _amount;
         }
         public void Add(int _amount)
@@ -39,36 +42,45 @@ namespace OOProjekt
         }
         public void AddToListView(ListView _listView)
         {
-            #warning missing comments
-            // Lav en ny instans af listboks objektet kaldet lvItem og sæt textboksen til denne kolonne
+            // Brug navnet på produktet i første kolonne (name) herunder laves alle kolonnerne til vores listViewitems undtagen PLU!
             ListViewItem listViewItemGUI = new ListViewItem(this.Name);
-            // Gå videre til subitemet af den givne data fra brugeren indtastet i nudAddItemAmount og insert denne værdi i den kolonne i listview kaldet "Amount"
+
             listViewItemGUI.SubItems.Add(this.Amount.ToString());
-            // Gå videre til subitemet af den givne data fra brugeren indtastet i cmbItemCatekory og indsæt denne værdi/string i en kolonne i listview kaldet "Category"
+
             listViewItemGUI.SubItems.Add(this.Category);
-            // Det samme som ovenover bare med Price kolonnen
+
             listViewItemGUI.SubItems.Add(this.Price.ToString());
-            // Hvis værdien i vores numeric up down er 0
+            
+            // Hvis PLU ikke er 0
             if (this.PLU != 0)
+                // Skriv da PLUen ind som normalt
                 listViewItemGUI.SubItems.Add(this.PLU.ToString());
             else
+                // Udskift 0 med "No PLU"
                 listViewItemGUI.SubItems.Add("No PLU");
-
+            
+            // Tilføj de indtastede værdier i listViewet
             _listView.Items.Add(listViewItemGUI);
 
+            // Lav noget backend som sætter mængden af varer til ID variablen
             this.ID = _listView.Items.Count;
         }
 
         public bool PLUexists(ListView _listView)
         {
-            #warning missing comments
+            // Lav en string kaldet StringPLU og sæt dens værdi til PLU
             string StringPLU = this.PLU.ToString();
+            // Lav en foreach løkke som tjekker for hver item i listviewet
             foreach (ListViewItem item in _listView.Items)
             {
+                // Hvis kolonne 4 (PLU)s tekst er det samme som stringen StringPLU
                 if (item.SubItems[4].Text == StringPLU)
+                    // Hvis teksten ikke er det samme som 0
                     if (item.SubItems[4].Text != "0")
+                        // Send "sand" tilbage til kalder
                         return true;
             }
+            // send "falsk" tilbage til kalder
             return false;
         }
 

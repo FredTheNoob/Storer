@@ -83,10 +83,10 @@ namespace OOProjekt
         // BtnAdd indstillinger
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            #warning missing comments
             // Opret en ny ting i vores itemStock klasse
             itemStock product = new itemStock();
 
+            // Få de værdier brugeren skriver gemt i vores product klasse
             product.Name = txtName.Text;
 
             product.Amount = (int)nudAddItemAmount.Value;
@@ -97,9 +97,13 @@ namespace OOProjekt
 
             product.PLU = (int)nudItemPlu.Value;
 
+            // Referer til vores itemstock klasse og find PLUexists - dette er en bool som enten er sand eller falsk. Tjek herefter om PLU nummeret brugeren har skrevet eksisterer i listViewet i forvejen. Hvis ja
             if (product.PLUexists(refForm1.MainListView))
-                MessageBox.Show("Another product with this PLU already exists", "PLU Exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Hvis en MessageBox som informerer brugeren om, at PLU nummeret allerede findes i listViewet. Lav et warning ikon og en ok knap
+                MessageBox.Show("Another product with this PLU already exist", "PLU Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            // Hvis PLU-nummeret ikke er det samme som det der står i listViewet
             else
+                // Få product til at tilføje alle brugerens givne værdier i listViewet på form1
                 product.AddToListView(refForm1.MainListView);
 
 
@@ -116,7 +120,7 @@ namespace OOProjekt
         {
             // Gem formen midlertidigt for brugeren
             this.Hide();
-            // Kald på metoden kaldes clearFields for at rydde/fjerne alt indhold i formen
+            // Kald på metoden kaldet clearFields for at rydde/fjerne alt indhold i formen
             clearFields();
         }
 
