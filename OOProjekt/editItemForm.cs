@@ -85,7 +85,7 @@ namespace OOProjekt
         #endregion custom Brugerflade
 
         // BtnAdd indstillinger
-        private void BtnAdd_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             SelectedName.Text = txtName.Text;
             SelectedAmount.Text = nudAddItemAmount.Value.ToString();

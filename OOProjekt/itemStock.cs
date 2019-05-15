@@ -37,18 +37,38 @@ namespace OOProjekt
         {
             return Price * Amount;
         }
-        public void ToListView(ListView _listView)
+        public void AddToListView(ListView _listView)
         {
+            // Lav en ny instans af listboks objektet kaldet lvItem og sæt textboksen til denne kolonne
             ListViewItem listViewItemGUI = new ListViewItem(this.Name);
+            // Gå videre til subitemet af den givne data fra brugeren indtastet i nudAddItemAmount og insert denne værdi i den kolonne i listview kaldet "Amount"
             listViewItemGUI.SubItems.Add(this.Amount.ToString());
+            // Gå videre til subitemet af den givne data fra brugeren indtastet i cmbItemCatekory og indsæt denne værdi/string i en kolonne i listview kaldet "Category"
             listViewItemGUI.SubItems.Add(this.Category);
+            // Det samme som ovenover bare med Price kolonnen
             listViewItemGUI.SubItems.Add(this.Price.ToString());
+            // Hvis værdien i vores numeric up down er 0
             if (this.PLU != 0)
                 listViewItemGUI.SubItems.Add(this.PLU.ToString());
             else
                 listViewItemGUI.SubItems.Add("No PLU");
 
             _listView.Items.Add(listViewItemGUI);
+
+            this.ID = _listView.Items.Count;
         }
+
+        public bool PLUexists(ListView _listView)
+        {
+            string StringPLU = this.PLU.ToString();
+            foreach (ListViewItem item in _listView.Items)
+            {
+                if (item.SubItems[4].Text == StringPLU)
+                    if (item.SubItems[4].Text != "0")
+                        return true;
+            }
+            return false;
+        }
+
     }
 }

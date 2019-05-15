@@ -21,7 +21,7 @@ namespace OOProjekt
         }
 
         // Her skjuler vi alt selvlavet brugerflade i en region
-        #region custom Brugerflade
+        #region customUI
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -82,56 +82,31 @@ namespace OOProjekt
         // BtnAdd indstillinger
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            // Lav en ny instans af listboks objektet kaldet lvItem og sæt textboksen til denne kolonne
-            ListViewItem lvItem = new ListViewItem(txtName.Text);
             // Opret en ny ting i vores itemStock klasse
             itemStock product = new itemStock();
-            // Gå videre til subitemet af den givne data fra brugeren indtastet i nudAddItemAmount og insert denne værdi i den kolonne i listview kaldet "Amount"
-            lvItem.SubItems.Add(nudAddItemAmount.Value.ToString());
+
+            product.Name = txtName.Text;
+
             product.Amount = (int)nudAddItemAmount.Value;
+
+            product.Category = cmbItemCategory.Text;
+
+            product.Price = (float)nudItemPrice.Value;
+
+            product.PLU = (int)nudItemPlu.Value;
+
+            if (product.PLUexists(refForm1.MainListView))
+                MessageBox.Show("Another product with this PLU already exists", "PLU Exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                product.AddToListView(refForm1.MainListView);
+
+
             // Hvis den indtastede kategori IKKE eksisterer så tilføj en ny kategori
             if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
             {
                 cmbItemCategory.Items.Add(cmbItemCategory.Text);
             }
-            // Gå videre til subitemet af den givne data fra brugeren indtastet i cmbItemCatekory og indsæt denne værdi/string i en kolonne i listview kaldet "Category"
-            lvItem.SubItems.Add(cmbItemCategory.Text);
-            // Det samme som ovenover bare med Price kolonnen
-            lvItem.SubItems.Add(nudItemPrice.Value.ToString());
-            // Det samme som ovenover (--||--)
 
-            // Hvis værdien i vores numeric up down er 0
-            if (nudItemPlu.Value == 0)
-            {
-                // Tilføj "No PLU" til kolonnen PLU
-                lvItem.SubItems.Add("No PLU");
-                // Referer til form1 og tilføj tingen til listviewet
-                refForm1.MainListView.Items.Add(lvItem);
-            }
-            else
-            {
-                // Tilføj tingene ind i listviewet af variablen defineret som lvItem
-                lvItem.SubItems.Add(nudItemPlu.Value.ToString());
-
-                // Lav en bool og sæt dens standardværdi til false
-                bool alreadyExists = false;
-
-                // For hvert ListViewItem inde i listviewet
-                foreach (ListViewItem item in refForm1.MainListView.Items)
-                    // Hvis teksten på subitemsene i 4. kolonne (PLU) er det samme som værdien af vores numeric up down
-                    if (item.SubItems[4].Text == nudItemPlu.Value.ToString())
-                    {
-                        alreadyExists = true;
-                        break;
-                    }
-
-                // Hvis PLU-værdien allerede er blevet indtastet før
-                if (alreadyExists)
-                    MessageBox.Show("Another product already has this PLU", "Warning: PLU exists", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                    // Hvis ikke, tilføj tingen
-                    refForm1.MainListView.Items.Add(lvItem);
-            }
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
