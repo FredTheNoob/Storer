@@ -14,6 +14,8 @@ namespace OOProjekt
     public partial class editItemForm : Form
     {
         Form1 refMainForm;
+        itemStock selectedItem;
+
         public editItemForm(Form1 Form1)
         {
             refMainForm = Form1;
@@ -83,11 +85,15 @@ namespace OOProjekt
         // BtnAdd indstillinger
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-#warning fixMe
-            SelectedName.Text = txtName.Text;
-            SelectedAmount.Text = nudAddItemAmount.Value.ToString();
-            SelectedCategory.Text = cmbItemCategory.Text;
-            SelectedPrice.Text = nudItemPrice.Value.ToString();
+            selectedItem.Name = txtName.Text;
+            selectedItem.Amount = (int)nudAddItemAmount.Value;
+            selectedItem.Category = cmbItemCategory.Text;
+            selectedItem.Price = (int)nudItemPrice.Value;
+            selectedItem.PLU = (int)nudItemPlu.Value;
+
+            this.Hide();
+            refMainForm.reloadListView();
+            refMainForm.saveUserData();
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
@@ -112,20 +118,13 @@ namespace OOProjekt
 
         private void EditItemForm_Load(object sender, EventArgs e)
         {
-#warning fixBlyat
-            // Get the contents from the selected added subitem and insert its text value into the forms textbox called txtName
-            txtName.Text = SelectedName.Text;
-            // Get the numeric up downs value and parse its value into a text property for the SelectedAmount to use
-            nudAddItemAmount.Value = int.Parse(SelectedAmount.Text);
-            cmbItemCategory.Text = SelectedCategory.Text;
-            nudItemPrice.Value = int.Parse(SelectedPrice.Text);
+            selectedItem = refMainForm.itemStockList[refMainForm.MainListView.SelectedItems[0].Index];
 
-            // If the PLU text does not say "No PLU"
-            if (SelectedPLU.Text != "No PLU")
-            {
-                // Save the value from the numeric up down into the text property for the SelectedPLU to use
-                nudItemPlu.Value = int.Parse(SelectedPLU.Text);
-            }   
+            txtName.Text = selectedItem.Name;
+            nudAddItemAmount.Value = selectedItem.Amount;
+            cmbItemCategory.Text = selectedItem.Category;
+            nudItemPrice.Value = (decimal)selectedItem.Price;
+            nudItemPlu.Value = selectedItem.PLU;
         }
 
     }

@@ -187,11 +187,14 @@ namespace OOProjekt
         }
 
         #region EksternFormSynlighed
+
+        // Når man på knappen viser den "ItemForm" for brugeren
         private void BtnNew_Click(object sender, EventArgs e)
         {
-            // Hvis knappen trykkes på skal den indlæste form vises til brugeren
             refItemForm.Show();
         }
+
+        // Når man på knappen viser den "EditForm" for brugeren
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             refEditForm.Show();
@@ -232,10 +235,7 @@ namespace OOProjekt
                 }
             }
         }
-        private void BtnSell_Click(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void LvBoks_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -263,16 +263,29 @@ namespace OOProjekt
 
         }
 
+        #region Add og Sell Knapper
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in MainListView.SelectedItems)
             {
-                int CurrentAmount = int.Parse(item.SubItems[1].Text);
-                int NewAmount = CurrentAmount + (int)nudAddAmount.Value;
-                item.SubItems[1].Text = NewAmount.ToString();
+                int NewAmount = itemStockList[item.Index].Amount + (int)nudAddAmount.Value;
                 itemStockList[item.Index].Amount = NewAmount;
             }
+
+            reloadListView();
         }
+
+        private void BtnSell_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in MainListView.SelectedItems)
+            {
+                int NewAmount = itemStockList[item.Index].Amount - (int)nudAddAmount.Value;
+                itemStockList[item.Index].Amount = NewAmount;
+            }
+
+            reloadListView();
+        }
+        #endregion
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
@@ -288,17 +301,16 @@ namespace OOProjekt
         /// METODER ///
         //////////////
 
-        private void saveUserData()
+        public void saveUserData()
         {
             // Her omformer vi listViewet til en json kompatibel string af vores itemStockList som defineret i klassen
             string json = JsonConvert.SerializeObject(itemStockList, Formatting.Indented);
 
             // Hvis filen eksisterer
             if (File.Exists(saveFilePath))
-            {
                 // Slet filen
                 File.Delete(saveFilePath);
-            }
+            
 
             // Ved at bruge system.IO lav en variabel kaldet saveWriter og sæt dens værdi til stringen filePath
             StreamWriter saveWriter = new StreamWriter(saveFilePath);
@@ -310,7 +322,7 @@ namespace OOProjekt
             saveWriter.Close();
         }
 
-        private void loadUserData()
+        public void loadUserData()
         {
             // Forsøg at gøre følgende:
             try
@@ -323,6 +335,8 @@ namespace OOProjekt
 
                 // Brug json metoder til at indlæse den gemte fil til vores liste
                 itemStockList = JsonConvert.DeserializeObject<List<itemStock>>(json);
+
+                fileReader.Close();
             }
             // Hvis der opstår en fejl
             catch (Exception)
@@ -332,7 +346,7 @@ namespace OOProjekt
             }
         }
 
-        private void reloadListView()
+        public void reloadListView()
         {
             // Fjern alle varerne inde i listViewet
             MainListView.Items.Clear();

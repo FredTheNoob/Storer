@@ -112,6 +112,10 @@ namespace OOProjekt
             // Hvis den indtastede kategori IKKE eksisterer så tilføj en ny kategori
             if (!cmbItemCategory.Items.Contains(cmbItemCategory.Text))
                 cmbItemCategory.Items.Add(cmbItemCategory.Text);
+
+            this.Hide();
+
+            refForm1.saveUserData();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
