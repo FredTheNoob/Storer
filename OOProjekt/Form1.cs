@@ -30,19 +30,6 @@ namespace OOProjekt
         public Form1()
         {
             InitializeComponent();
-            dt = new DataTable();
-            dt.Columns.Add("Name");
-            dt.Columns.Add("Amount");
-            dt.Columns.Add("Category");
-            dt.Columns.Add("Price");
-            dt.Columns.Add("PLU");
-
-            // Vi vil gerne filtrere listView så brugeren kan se hvad han søger efter
-
-            fillTheDataTable(itemStockList);
-            dv = new DataView(dt);
-
-            fillTheListview(dv);
         }
 
 
@@ -200,7 +187,22 @@ namespace OOProjekt
             itemStockList = new List<itemStock>();
             // Kald på de definerede metoder
             loadUserData();
+
             reloadListView();
+
+            dt = new DataTable();
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Amount");
+            dt.Columns.Add("Category");
+            dt.Columns.Add("Price");
+            dt.Columns.Add("PLU");
+
+            // Vi vil gerne filtrere listView så brugeren kan se hvad han søger efter
+
+            fillTheDataTable(itemStockList);
+            dv = new DataView(dt);
+
+            fillTheListview(dv);
         }
 
         #region EksternFormSynlighed
@@ -378,9 +380,9 @@ namespace OOProjekt
         }
         
         // Overfør data fra listView til DataTable
-        private void fillTheDataTable(List<itemStock> _ItemStockList)
+        private void fillTheDataTable(List<itemStock> itemStockList)
         {
-            foreach (itemStock item in _ItemStockList)
+            foreach (itemStock item in itemStockList)
             {
                 dt.Rows.Add(item.Name, item.Amount, item.Category, item.Price, item.PLU);
             }
