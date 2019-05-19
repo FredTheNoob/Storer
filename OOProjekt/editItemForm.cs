@@ -92,7 +92,7 @@ namespace OOProjekt
             selectedItem.PLU = (int)nudItemPlu.Value;
 
             this.Hide();
-            refMainForm.reloadListView();
+            refMainForm.reloadListView(refMainForm.itemStockList);
             refMainForm.saveUserData();
         }
 
