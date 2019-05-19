@@ -22,10 +22,27 @@ namespace OOProjekt
         public List<itemStock> itemStockList;
         // Lav en string kaldet saveFilePath som finder stien af filen og tilføj et filnavn og typen json
         string saveFilePath = Path.GetDirectoryName(Application.ExecutablePath) + "\\save.json";
+        // Lav et DataTable til at gemme de værdier der er i listViewet til senere brug i søge funktionen
+        private DataTable dt;
+        private DataView dv;
+
 
         public Form1()
         {
             InitializeComponent();
+            dt = new DataTable();
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Amount");
+            dt.Columns.Add("Category");
+            dt.Columns.Add("Price");
+            dt.Columns.Add("PLU");
+
+            // Vi vil gerne filtrere listView så brugeren kan se hvad han søger efter
+
+            fillTheDataTable(itemStockList);
+            dv = new DataView(dt);
+
+            fillTheListview(dv);
         }
 
 
@@ -256,11 +273,12 @@ namespace OOProjekt
             }
         }
 
-        // Når der trykkes på en knap mens brugeren er inde i tekstboksen
-        private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        // Når teksten i tekstboksen ændres
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            // Filter the text
+            dv.RowFilter = string.Format("Name Like '%[0]%'", txtSearch.Text);
 
+            fillTheListview(dv);
         }
 
         #region Add og Sell Knapper
@@ -358,7 +376,26 @@ namespace OOProjekt
                 item.AddToListView(MainListView);
             }
         }
-
         
+        // Overfør data fra listView til DataTable
+        private void fillTheDataTable(List<itemStock> _ItemStockList)
+        {
+            foreach (itemStock item in _ItemStockList)
+            {
+                dt.Rows.Add(item.Name, item.Amount, item.Category, item.Price, item.PLU);
+            }
+        }
+
+        // Fyld listViewet op igen fra DataViewet
+        private void fillTheListview(DataView dv)
+        {
+            // Start med at fjerne alle items fra listViewet så der kun vises det der søges efter
+            MainListView.Items.Clear();
+
+            foreach (DataRow row in dv.ToTable().Rows)
+            {
+                MainListView.Items.Add(new ListViewItem(new string[] { row[0].ToString(), row[1].ToString(), (string)row[2], row[3].ToString(), row[4].ToString() }));
+            }
+        }
     }
 }
