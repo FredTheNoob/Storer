@@ -190,8 +190,6 @@ namespace OOProjekt
 
             // Kald på metoden som re-indlæser listViewet med brugerens items
             reloadListView(itemStockList);
-
-            MessageBox.Show(MainListView.Items.Count + " "+itemStockList.Count);
         }
 
         #region EksternFormSynlighed
@@ -242,7 +240,6 @@ namespace OOProjekt
                     {
                         MessageBox.Show("You selected more than one item, please only select 1");
                     }
-                    
                     // Kald metoden for at genindlæse listViewet
                     reloadListView(itemStockList);
                 }
