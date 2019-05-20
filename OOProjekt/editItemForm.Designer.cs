@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editItemForm));
             this.btnMinimize = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Label();
             this.cmbItemCategory = new System.Windows.Forms.ComboBox();
@@ -283,6 +284,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "editItemForm";
             this.Text = "addItemForm";
             this.Load += new System.EventHandler(this.EditItemForm_Load);
