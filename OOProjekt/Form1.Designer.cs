@@ -51,6 +51,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblMadeBy = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSellAmount)).BeginInit();
@@ -63,8 +65,8 @@
             // 
             this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtSearch.BackColor = System.Drawing.Color.Silver;
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSearch.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtSearch.Location = new System.Drawing.Point(643, 53);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
@@ -75,24 +77,24 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(581, 53);
+            this.lblSearch.Font = new System.Drawing.Font("Roboto Thin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(574, 51);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(60, 20);
+            this.lblSearch.Size = new System.Drawing.Size(67, 23);
             this.lblSearch.TabIndex = 7;
             this.lblSearch.Text = "Search";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(291, 43);
+            this.lblTitle.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(323, 23);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(209, 31);
+            this.lblTitle.Size = new System.Drawing.Size(154, 33);
             this.lblTitle.TabIndex = 8;
-            this.lblTitle.Text = "Welcome USER";
+            this.lblTitle.Text = "Storer V6.1";
             // 
             // pictureBox1
             // 
@@ -152,7 +154,7 @@
             this.lvBoks.Location = new System.Drawing.Point(19, 80);
             this.lvBoks.Margin = new System.Windows.Forms.Padding(2);
             this.lvBoks.Name = "lvBoks";
-            this.lvBoks.Size = new System.Drawing.Size(732, 377);
+            this.lvBoks.Size = new System.Drawing.Size(732, 366);
             this.lvBoks.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvBoks.TabIndex = 12;
             this.lvBoks.UseCompatibleStateImageBehavior = false;
@@ -191,7 +193,7 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnNew.Location = new System.Drawing.Point(650, 471);
+            this.btnNew.Location = new System.Drawing.Point(650, 461);
             this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(101, 46);
@@ -209,7 +211,7 @@
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnRemove.Location = new System.Drawing.Point(19, 471);
+            this.btnRemove.Location = new System.Drawing.Point(19, 461);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(101, 46);
@@ -227,7 +229,7 @@
             this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSell.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnSell.Location = new System.Drawing.Point(277, 496);
+            this.btnSell.Location = new System.Drawing.Point(277, 486);
             this.btnSell.Margin = new System.Windows.Forms.Padding(2);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(47, 21);
@@ -245,7 +247,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.Location = new System.Drawing.Point(277, 471);
+            this.btnAdd.Location = new System.Drawing.Point(277, 461);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(47, 21);
@@ -264,7 +266,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEdit.Location = new System.Drawing.Point(145, 471);
+            this.btnEdit.Location = new System.Drawing.Point(145, 461);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(101, 46);
@@ -277,17 +279,27 @@
             // 
             // nudAddAmount
             // 
-            this.nudAddAmount.Location = new System.Drawing.Point(329, 471);
+            this.nudAddAmount.Location = new System.Drawing.Point(329, 461);
             this.nudAddAmount.Name = "nudAddAmount";
             this.nudAddAmount.Size = new System.Drawing.Size(71, 20);
             this.nudAddAmount.TabIndex = 18;
+            this.nudAddAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // nudSellAmount
             // 
-            this.nudSellAmount.Location = new System.Drawing.Point(329, 496);
+            this.nudSellAmount.Location = new System.Drawing.Point(329, 487);
             this.nudSellAmount.Name = "nudSellAmount";
             this.nudSellAmount.Size = new System.Drawing.Size(71, 20);
             this.nudSellAmount.TabIndex = 19;
+            this.nudSellAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // pictureBox2
             // 
@@ -326,7 +338,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnSave.Location = new System.Drawing.Point(540, 471);
+            this.btnSave.Location = new System.Drawing.Point(540, 461);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 46);
@@ -337,12 +349,35 @@
             this.btnSave.MouseEnter += new System.EventHandler(this.BtnSave_MouseEnter);
             this.btnSave.MouseLeave += new System.EventHandler(this.BtnSave_MouseLeave);
             // 
+            // lblMadeBy
+            // 
+            this.lblMadeBy.AutoSize = true;
+            this.lblMadeBy.Font = new System.Drawing.Font("Roboto Thin", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMadeBy.Location = new System.Drawing.Point(262, 51);
+            this.lblMadeBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMadeBy.Name = "lblMadeBy";
+            this.lblMadeBy.Size = new System.Drawing.Size(268, 23);
+            this.lblMadeBy.TabIndex = 24;
+            this.lblMadeBy.Text = "Made by Arnar F and Frederik H";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto Thin", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(693, 513);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "© HFx1 - 2019";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(770, 528);
+            this.Controls.Add(this.lblMadeBy);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -358,9 +393,10 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -402,6 +438,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblMadeBy;
+        private System.Windows.Forms.Label label1;
     }
 }
 

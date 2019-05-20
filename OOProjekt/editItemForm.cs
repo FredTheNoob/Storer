@@ -85,14 +85,18 @@ namespace OOProjekt
         // BtnAdd indstillinger
         private void BtnEdit_Click(object sender, EventArgs e)
         {
+            // Sæt tekstboksene i formen til det samme som værdierne på varen
             selectedItem.Name = txtName.Text;
             selectedItem.Amount = (int)nudAddItemAmount.Value;
             selectedItem.Category = cmbItemCategory.Text;
             selectedItem.Price = (int)nudItemPrice.Value;
             selectedItem.PLU = (int)nudItemPlu.Value;
 
+            // Der hvor C# står lige nu skal den gemme formen for brugeren
             this.Hide();
+            // Genindlæs listViewet vha. vores metode reloadListView
             refMainForm.reloadListView(refMainForm.itemStockList);
+            // Kald på metoden som gemmer dataene
             refMainForm.saveUserData();
         }
 
@@ -102,11 +106,12 @@ namespace OOProjekt
             this.WindowState = FormWindowState.Minimized;
         }
 
+
         ////////////////
         /// METODER ///
         //////////////
 
-        // Definer en metoden som fjerne alt indhold i formen
+        // Definer en metoden som fjerne alt indhold i formen (editItemForm)
         private void clear()
         {
             txtName.Clear();
@@ -116,16 +121,17 @@ namespace OOProjekt
             nudItemPlu.ResetText();
         }
 
-        private void EditItemForm_Load(object sender, EventArgs e)
+        public void setupEdit()
         {
+            // Sæt mængden af valgte varer (1) til variablen selectedItem
             selectedItem = refMainForm.itemStockList[refMainForm.MainListView.SelectedItems[0].Index];
 
+            // Indsæt værdierne i formen fra klassen itemstock
             txtName.Text = selectedItem.Name;
             nudAddItemAmount.Value = selectedItem.Amount;
             cmbItemCategory.Text = selectedItem.Category;
             nudItemPrice.Value = (decimal)selectedItem.Price;
             nudItemPlu.Value = selectedItem.PLU;
         }
-
     }
 }

@@ -194,7 +194,7 @@ namespace OOProjekt
 
         #region EksternFormSynlighed
 
-        // Når man på knappen viser den "ItemForm" for brugeren
+        // Når man trykker på knappen viser den "ItemForm" for brugeren
         private void BtnNew_Click(object sender, EventArgs e)
         {
             refItemForm.Show();
@@ -203,6 +203,8 @@ namespace OOProjekt
         // Når man på knappen viser den "EditForm" for brugeren
         private void BtnEdit_Click(object sender, EventArgs e)
         {
+            refEditForm.setupEdit();
+            // Vis rediger-formen til brugeren
             refEditForm.Show();
         }
 
@@ -236,10 +238,15 @@ namespace OOProjekt
                         //MainListView.Items.Remove(eachItem);
                         itemStockList.Remove(itemStockList[eachItem.Index]);
                     }
-
+                    // Kald metoden for at genindlæse listViewet
                     reloadListView(itemStockList);
                 }
             }
+
+            // Vær sikker på at farven er silver og dimgray når intet er valgt eller man lige har fjernet noget fra listViewet
+            this.btnEdit.BackColor = System.Drawing.Color.Silver;
+            this.btnEdit.Enabled = false;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
         }
 
 
@@ -308,12 +315,16 @@ namespace OOProjekt
         #region Add og Sell Knapper
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            // For hvert ListViewItem i valgte varer
             foreach (ListViewItem item in MainListView.SelectedItems)
             {
+                // Lav en int og sæt den til itemstocklistens mængde af items og tilføj den værdi der er skrevet af brugeren i numeric up downen i listViewet
                 int NewAmount = itemStockList[item.Index].Amount + (int)nudAddAmount.Value;
+                // Her gemmes værdien i vores datastruktur
                 itemStockList[item.Index].Amount = NewAmount;
             }
 
+            // Her vises dataen til brugeren
             reloadListView(itemStockList);
         }
 
@@ -321,6 +332,7 @@ namespace OOProjekt
         {
             foreach (ListViewItem item in MainListView.SelectedItems)
             {
+                // Gør det samme som i BtnAdd_Click men subtraher i stedet for at addere værdien
                 int NewAmount = itemStockList[item.Index].Amount - (int)nudAddAmount.Value;
                 itemStockList[item.Index].Amount = NewAmount;
             }

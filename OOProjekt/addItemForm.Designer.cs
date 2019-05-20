@@ -137,9 +137,9 @@
             // 
             this.lblAddItem.AutoSize = true;
             this.lblAddItem.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddItem.Location = new System.Drawing.Point(8, 44);
+            this.lblAddItem.Location = new System.Drawing.Point(22, 45);
             this.lblAddItem.Name = "lblAddItem";
-            this.lblAddItem.Size = new System.Drawing.Size(313, 29);
+            this.lblAddItem.Size = new System.Drawing.Size(291, 29);
             this.lblAddItem.TabIndex = 31;
             this.lblAddItem.Text = "Add an item to your stock";
             // 
@@ -167,7 +167,7 @@
             this.lblAddItemPlu.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemPlu.Location = new System.Drawing.Point(29, 355);
             this.lblAddItemPlu.Name = "lblAddItemPlu";
-            this.lblAddItemPlu.Size = new System.Drawing.Size(38, 19);
+            this.lblAddItemPlu.Size = new System.Drawing.Size(39, 19);
             this.lblAddItemPlu.TabIndex = 40;
             this.lblAddItemPlu.Text = "PLU";
             // 
@@ -177,7 +177,7 @@
             this.lblAddItemPrice.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemPrice.Location = new System.Drawing.Point(23, 294);
             this.lblAddItemPrice.Name = "lblAddItemPrice";
-            this.lblAddItemPrice.Size = new System.Drawing.Size(44, 19);
+            this.lblAddItemPrice.Size = new System.Drawing.Size(46, 19);
             this.lblAddItemPrice.TabIndex = 39;
             this.lblAddItemPrice.Text = "Price";
             // 
@@ -187,7 +187,7 @@
             this.lblAddItemAmount.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemAmount.Location = new System.Drawing.Point(9, 173);
             this.lblAddItemAmount.Name = "lblAddItemAmount";
-            this.lblAddItemAmount.Size = new System.Drawing.Size(65, 19);
+            this.lblAddItemAmount.Size = new System.Drawing.Size(66, 19);
             this.lblAddItemAmount.TabIndex = 38;
             this.lblAddItemAmount.Text = "Amount";
             // 
@@ -197,7 +197,7 @@
             this.lblAddItemCategory.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemCategory.Location = new System.Drawing.Point(2, 238);
             this.lblAddItemCategory.Name = "lblAddItemCategory";
-            this.lblAddItemCategory.Size = new System.Drawing.Size(72, 19);
+            this.lblAddItemCategory.Size = new System.Drawing.Size(74, 19);
             this.lblAddItemCategory.TabIndex = 37;
             this.lblAddItemCategory.Text = "Category";
             // 
@@ -207,7 +207,7 @@
             this.lblAddItemName.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddItemName.Location = new System.Drawing.Point(16, 113);
             this.lblAddItemName.Name = "lblAddItemName";
-            this.lblAddItemName.Size = new System.Drawing.Size(51, 19);
+            this.lblAddItemName.Size = new System.Drawing.Size(52, 19);
             this.lblAddItemName.TabIndex = 36;
             this.lblAddItemName.Text = "Name";
             // 
@@ -284,7 +284,7 @@
             this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addItemForm";
-            this.Text = " ";
+            this.Text = "Storer - Add Item";
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPlu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddItemAmount)).EndInit();

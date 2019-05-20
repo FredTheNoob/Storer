@@ -115,6 +115,7 @@ namespace OOProjekt
 
             this.Hide();
 
+            // Gem dataen
             refForm1.saveUserData();
         }
 

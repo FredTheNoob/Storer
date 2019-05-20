@@ -27,19 +27,7 @@ namespace OOProjekt
             Amount = _Amount;
             ID = _ID;
         }
-        public void Sell(int _amount)
-        {
-            // Når metoden kaldes: Tag kolonnen amount of fjern 1
-            Amount -= _amount;
-        }
-        public void Add(int _amount)
-        {
-            Amount += _amount;
-        }
-        public float GetValue()
-        {
-            return Price * Amount;
-        }
+        
         public void AddToListView(ListView _listView)
         {
             // Brug navnet på produktet i første kolonne (name) herunder laves alle kolonnerne til vores listViewitems undtagen PLU!
@@ -58,12 +46,13 @@ namespace OOProjekt
             else
                 // Udskift 0 med "No PLU"
                 listViewItemGUI.SubItems.Add("No PLU");
-            
-            // Tilføj de indtastede værdier i listViewet
-            _listView.Items.Add(listViewItemGUI);
 
             // Lav noget backend som sætter mængden af varer til ID variablen
             this.ID = _listView.Items.Count;
+
+            // Tilføj de indtastede værdier i listViewet
+            _listView.Items.Add(listViewItemGUI);
+
         }
 
         public bool PLUexists(ListView _listView)
@@ -73,7 +62,7 @@ namespace OOProjekt
             // Lav en foreach løkke som tjekker for hver item i listviewet
             foreach (ListViewItem item in _listView.Items)
             {
-                // Hvis kolonne 4 (PLU)s tekst er det samme som stringen StringPLU
+                // Hvis kolonne 4 (PLUs) tekst er det samme som stringen StringPLU
                 if (item.SubItems[4].Text == StringPLU)
                     // Hvis teksten ikke er det samme som 0
                     if (item.SubItems[4].Text != "0")
