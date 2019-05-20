@@ -20,6 +20,9 @@ namespace OOProjekt
         // Lav et offentligt tilgængeligt listView
         public ListView MainListView;
         public List<itemStock> itemStockList;
+        // Lav en variabel som gemmer vores itemStock klasse
+        List<itemStock> searchItemStockList;
+        int oldSearchLength;
         // Lav en string kaldet saveFilePath som finder stien af filen og tilføj et filnavn og typen json
         string saveFilePath = Path.GetDirectoryName(Application.ExecutablePath) + "\\save.json";
 
@@ -27,7 +30,6 @@ namespace OOProjekt
         {
             InitializeComponent();
         }
-
 
         #region customUI
 
@@ -181,9 +183,13 @@ namespace OOProjekt
             MainListView = lvBoks;
             // Definer klassen itemStock.cs
             itemStockList = new List<itemStock>();
+            // Lav en klasse som tager samme værdier fra itemStock.cs
+            searchItemStockList = new List<itemStock>();
             // Kald på de definerede metoder
             loadUserData();
-            reloadListView();
+
+            // Kald på metoden som re-indlæser listViewet med brugerens items
+            reloadListView(itemStockList);
         }
 
         #region EksternFormSynlighed
@@ -231,7 +237,7 @@ namespace OOProjekt
                         itemStockList.Remove(itemStockList[eachItem.Index]);
                     }
 
-                    reloadListView();
+                    reloadListView(itemStockList);
                 }
             }
         }
@@ -256,11 +262,47 @@ namespace OOProjekt
             }
         }
 
-        // Når der trykkes på en knap mens brugeren er inde i tekstboksen
-        private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        // Når teksten i tekstboksen ændres
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            // Filter the text
+            // Hvis længde på den nye tekst er større end den gamle
+            if (oldSearchLength < txtSearch.TextLength)
+            {
+                // Start med at rydde hele klassen
+                searchItemStockList.Clear();
 
+                // For hvert searchItem in itemStockList
+                foreach (itemStock searchItem in itemStockList)
+                {
+                    // Hvis kategorien name indeholde det samme som det der skrives i tekstboksen
+                    if (searchItem.Name.Contains(txtSearch.Text))
+                    {
+                        // Tilføj dette til listen
+                        searchItemStockList.Add(searchItem);
+                    }
+                    // samme som ovenover
+                    else if (searchItem.Category.Contains(txtSearch.Text))
+                    {
+                        searchItemStockList.Add(searchItem);
+                    }
+                    else if (searchItem.PLU.ToString().Contains(txtSearch.Text))
+                    {
+                        searchItemStockList.Add(searchItem);
+                    }
+
+                    // Genindlæs til sidst listViewet af vores searchItemStockList
+                    reloadListView(searchItemStockList);
+                }
+            }
+            // Hvis at længden af teksten er 0
+            else if (txtSearch.TextLength == 0)
+            {
+                // Genindlæs listViewet af vores itemStocklist (tilføj de gemte værdier igen)
+                reloadListView(itemStockList);
+            }
+
+            // Sæt til sidst lændgen på den gamle søgte længde til længden af teksten i søgetekstboksen
+            oldSearchLength = txtSearch.TextLength;
         }
 
         #region Add og Sell Knapper
@@ -272,7 +314,7 @@ namespace OOProjekt
                 itemStockList[item.Index].Amount = NewAmount;
             }
 
-            reloadListView();
+            reloadListView(itemStockList);
         }
 
         private void BtnSell_Click(object sender, EventArgs e)
@@ -283,7 +325,7 @@ namespace OOProjekt
                 itemStockList[item.Index].Amount = NewAmount;
             }
 
-            reloadListView();
+            reloadListView(itemStockList);
         }
         #endregion
 
@@ -346,19 +388,17 @@ namespace OOProjekt
             }
         }
 
-        public void reloadListView()
+        public void reloadListView(List<itemStock> loadToListview)
         {
             // Fjern alle varerne inde i listViewet
             MainListView.Items.Clear();
 
             // For hvert itemStock i vores itemStockList
-            foreach (itemStock item in itemStockList)
+            foreach (itemStock item in loadToListview)
             {
                 // Tilføj 
                 item.AddToListView(MainListView);
             }
         }
-
-        
     }
 }
