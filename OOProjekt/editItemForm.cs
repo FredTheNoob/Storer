@@ -96,8 +96,6 @@ namespace OOProjekt
             this.Hide();
             // Genindlæs listViewet vha. vores metode reloadListView
             refMainForm.reloadListView(refMainForm.itemStockList);
-            // Kald på metoden som gemmer dataene
-            refMainForm.saveUserData();
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)

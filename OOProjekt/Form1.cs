@@ -228,18 +228,21 @@ namespace OOProjekt
             if (selectCount > 0)
             {
                 // Viser brugeren en MessageBox som spørger om personen har lyst til at fjerne de valgte ting fra listviewet og sæt ikonet af messageboksen til et infoikon
-                DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove " + selectCount + " item(s)?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove this item(s)?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 // Hvis brugeren trykker ja
                 if (dialogResult == DialogResult.Yes)
                 {
-                    // Fjern hver ting inde i listviewet
-                    foreach (ListViewItem eachItem in lvBoks.SelectedItems)
+                    
+                    if (MainListView.SelectedItems.Count == 1)
                     {
-                        // Fjern de valgte ting
-                        MainListView.Items.Remove(eachItem);
-                        //itemStockList.Remove(itemStockList[eachItem.Index]);
+                        itemStockList.Remove(itemStockList[MainListView.SelectedItems[0].Index]);
                     }
+                    else
+                    {
+                        MessageBox.Show("You selected more than one item, please only select 1");
+                    }
+                    
                     // Kald metoden for at genindlæse listViewet
                     reloadListView(itemStockList);
                 }
