@@ -58,12 +58,12 @@ namespace OOProjekt
             else
                 // Udskift 0 med "No PLU"
                 listViewItemGUI.SubItems.Add("No PLU");
-            
+
+            // Lav noget backend (ikke synligt for brugeren) som sætter mængden af varer til ID variablen
+            this.ID = _listView.Items.Count;
+
             // Tilføj de indtastede værdier i listViewet
             _listView.Items.Add(listViewItemGUI);
-
-            // Lav noget backend som sætter mængden af varer til ID variablen
-            this.ID = _listView.Items.Count;
         }
 
         public bool PLUexists(ListView _listView)

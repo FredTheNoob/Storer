@@ -190,6 +190,8 @@ namespace OOProjekt
 
             // Kald på metoden som re-indlæser listViewet med brugerens items
             reloadListView(itemStockList);
+
+            MessageBox.Show(MainListView.Items.Count + " "+itemStockList.Count);
         }
 
         #region EksternFormSynlighed
@@ -233,8 +235,8 @@ namespace OOProjekt
                     foreach (ListViewItem eachItem in lvBoks.SelectedItems)
                     {
                         // Fjern de valgte ting
-                        //MainListView.Items.Remove(eachItem);
-                        itemStockList.Remove(itemStockList[eachItem.Index]);
+                        MainListView.Items.Remove(eachItem);
+                        //itemStockList.Remove(itemStockList[eachItem.Index]);
                     }
 
                     reloadListView(itemStockList);
